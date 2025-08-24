@@ -18,52 +18,6 @@
 		type="text/javascript"
 		src="../../reveal.js/dist/vis-graph3d.min.js"
 	  ></script>
-	  <!-- <script type="text/javascript">
-		var data = null;
-		var graph = null;
-  
-	
-		// Called when the Visualization API is loaded.
-		function drawVisualization() {
-		  // Create and populate a data table.
-		  data = new vis.DataSet();
-		  // create some nice looking data with sin/cos
-		  var counter = 0;
-		  var steps = 1000; // number of datapoints will be steps*steps
-		  var axisMax = 20;
-		  var axisStep = axisMax / steps;
-		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
-			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
-		  }
-  
-		  // specify options
-		  var options = {
-			width: "600px",
-			height: "600px",
-			style: "line",
-			dataColor: '#ff0000',
-			showPerspective: false,
-			showGrid: true,
-			showShadow: false,
-			keepAspectRatio: false,
-			verticalRatio: 1,
-			xLabel: "t",
-			zLabel: "Imaginário",
-			yLabel: "Real",
-			showAnimationControls 	: true
-		  };
-  
-		  // Instantiate our graph object.
-		  var container = document.getElementById("mygraph");
-		  graph = new vis.Graph3d(container, data, options);
-		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
-
-
-		  var container = document.getElementById("mygraph2");
-		  graph = new vis.Graph3d(container, data, options);
-		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
-		}
-	  </script> -->
 	</head>
 	<!-- <body onload="drawVisualization();"> -->
 		<body>
@@ -99,8 +53,8 @@
 			
 					<ul>
 	   				    <li>Exemplos de Serie de Fourier na forma Complexa;</li>
-						<li>Teorema de Parseval;</li>
 						<li>Propriedades da Série de Fourier</li>
+						<li>Série de Fourier em 2D</li>
 					</ul>
 				
 			</div>
@@ -138,6 +92,22 @@
 			   </div>
 
 		</section>
+
+
+		<section>
+
+					<div class="slide-title">
+						<h2>Exponencial Complexa</h2>
+					</div>
+					<div>
+					<p>
+						$$z=e^{j\omega t}$$
+					</p>
+							
+						<img src="../../images/complex_exp.gif" alt="">
+					   </div>
+
+				</section>
 
 
 
@@ -182,6 +152,48 @@
 		</section>
 
 
+				<section>
+
+			<div class="slide-title">
+				<h2>Espectro de Fourier: $g:\mathbb{R}\to\mathbb{R}$</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<p class="lightup2">
+					$$
+					g(t)=\sum_{n=-\infty}^\infty |c_n|\cos(n\omega_0 t+\theta_n)
+					$$
+				</p>
+				<img src="../../images/espectro_fourier.gif" width="600">
+				
+		</center>
+			   </div>
+
+		</section>
+
+
+				
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Espectro de Fourier: $g:\mathbb{R}\to\mathbb{C}$</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<p class="lightup2">
+					$$
+					g(t)=\sum_{n=-\infty}^\infty c_ne^{jn\omega_0 t}=\sum_{n=0}^\infty |c_n|e^{j(n\omega_0 t+\theta_n)}
+					$$
+				</p>
+				<img src="../../images/complex_exp.gif" width="450">
+				
+		</center>
+			   </div>
+
+		</section>
+
+
 
 
 			<section>
@@ -218,7 +230,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 2: trem de impulsos</h2>
+				<h2>Exemplo 1: trem de impulsos</h2>
 			</div>
 			<div class="slide-content">
 				<center>
@@ -243,7 +255,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 2: trem de impulsos</h2>
+				<h2>Exemplo 1: trem de impulsos</h2>
 			</div>
 			<div class="slide-content">
 			<p>&nbsp;</p>
@@ -260,7 +272,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 2: trem de impulsos</h2>
+				<h2>Exemplo 1: trem de impulsos</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -279,7 +291,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 2: trem de impulsos</h2>
+				<h2>Exemplo 1: trem de impulsos</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -299,7 +311,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 2: trem de impulsos</h2>
+				<h2>Exemplo 1: trem de impulsos</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -318,7 +330,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 2: trem de impulsos</h2>
+				<h2>Exemplo 1: trem de impulsos</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -338,7 +350,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 2: trem de impulsos</h2>
+				<h2>Exemplo 1: trem de impulsos</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -358,7 +370,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 3: dente de serra</h2>
+				<h2>Exemplo 2: dente de serra</h2>
 			</div>
 			<div class="slide-content">
 				<center>
@@ -366,7 +378,7 @@
 					$$
 					g(t)=at,\forall t:|t|\le \frac{T}{2}
 					$$
-	<img src="../../images/dente_serra.png" width="750"><br>Ex: T=4
+	<img src="../../images/dente_serra.png" width="750"><br>Ex: T=4, a=1
 		
 			
 						
@@ -379,7 +391,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 3: dente de serra</h2>
+				<h2>Exemplo 2: dente de serra</h2>
 			</div>
 			<div class="slide-content">
 				<center>
@@ -404,7 +416,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 3: dente de serra</h2>
+				<h2>Exemplo 2: dente de serra</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -423,7 +435,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 3: dente de serra</h2>
+				<h2>Exemplo 2: dente de serra</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -442,7 +454,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 3: dente de serra</h2>
+				<h2>Exemplo 2: dente de serra</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -461,7 +473,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 3: dente de serra</h2>
+				<h2>Exemplo 2: dente de serra</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -480,7 +492,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 3: dente de serra</h2>
+				<h2>Exemplo 2: dente de serra</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -500,7 +512,7 @@
 		<section>
 
 			<div class="slide-title">
-				<h2>Exemplo 3: dente de serra</h2>
+				<h2>Exemplo 2: dente de serra</h2>
 			</div>
 			<div class="slide-content">
 				<p>&nbsp;</p>
@@ -517,6 +529,180 @@
 
 
 		
+
+<section>
+
+			<div class="slide-title">
+				<h2>Propriedades da Série de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				Defina o operador $\mathcal{S}_F\{\cdot\}$ tal que, dado duas funções de mesmo período, $g(t)=g(T+T)$ e $h(t)=h(t+T)$, tem-se
+				<center>
+					<p class="lightup">
+				$$ 
+					\mathcal{S}_F\{g(t)\}=c_n,\quad \mathcal{S}_F\{h(t)\}=d_n
+				$$
+			</p>
+			<p>Em que, $c_n$ corresponde ao n-ésimo coeficiente da série de Fourier de $g(t)$, e $d_n$ ao n-ésimo coeficiente da série de Fourier de $h(t)$.</p>
+				
+		</center>
+			   </div>
+
+		</section>
+
+
+			
+		<section>
+
+			<div class="slide-title">
+				<h2>Propriedades da Série de Fourier</h2>
+			</div>
+			<div class="slide-content">
+<center>
+				<ul>
+
+					<li>
+						Linearidade:
+						$$
+						\mathcal{S}_F\{\alpha g(t)+\beta h(t)\}=\alpha c_n+\beta d_n
+						$$
+					</li>
+					<li>
+						Deslocamento no tempo:
+						$$
+						\mathcal{S}_F\{g(t-t_0)\}=e^{-jn\omega_0 t_0}c_n
+						$$
+					</li>
+					<li>
+						Deslocamento na frequência:
+						$$
+						\mathcal{S}_F\{e^{jm\omega_0 t}g(t)\}=c_{n-m}
+						$$
+					</li>
+				</ul>
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Propriedades da Série de Fourier</h2>
+			</div>
+			<div class="slide-content">
+			
+				<center>
+				<ul>
+
+					
+					<li>Inversão no tempo:
+						$$
+						\mathcal{S}_F\{g(-t)\}=c_{-n}
+						$$
+					</li>
+					<li>
+						Convolução periódica:
+						$$
+						\mathcal{S}_F\{g(t)\ast h(t)\}=Tc_n d_n
+						$$
+					</li>
+					
+				</ul>
+			</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Propriedades da Série de Fourier</h2>
+			</div>
+			<div class="slide-content">
+			
+				<center>
+				<ul>
+
+				
+					<li>Multiplicação no tempo:
+$$
+\mathcal{S}_F\{g(t)h(t)\}=\sum_{l=-\infty}^\infty c_l d_{n-l}
+$$
+
+					</li>
+					<li>
+						Derivadas
+						$$
+						\mathcal{S}_F\Bigl\{\frac{dg}{dt}\Bigr\}=jn\omega_0 c_n
+						$$
+
+					</li>
+				</ul>
+			</center>
+			   </div>
+
+		</section>
+		
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplo:</h2>
+			</div>
+			<div class="slide-content">
+			
+				<center>
+				Sabendo que 
+						$$
+						\mathcal{S}_F\Bigl\{\frac{dg}{dt}\Bigr\}=jn\omega_0 c_n
+						$$
+					Determine a série de Fourier da função 
+					$$
+					g(t)=at,\forall t:|t|\le \frac{T}{2}
+					$$
+	
+			</center>
+			   </div>
+
+		</section>
+
+
+
+
+
+
+
+					<section>
+
+			<div class="slide-title">
+				
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+
+				<h1>Parte II</h1>
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		
+
+		
+
+
+
+			
+
 
 
 		
@@ -684,156 +870,6 @@
 </div>
 
 </section>
-
-
-
-
-
-		
-
-		<section>
-
-			<div class="slide-title">
-				<h2>Propriedades da Série de Fourier</h2>
-			</div>
-			<div class="slide-content">
-				Defina o operador $\mathcal{S}_F\{\cdot\}$ tal que, dado duas funções de mesmo período, $g(t)=g(T+T)$ e $h(t)=h(t+T)$, tem-se
-				<center>
-					<p class="lightup">
-				$$ 
-					\mathcal{S}_F\{g(t)\}=c_n,\quad \mathcal{S}_F\{h(t)\}=d_n
-				$$
-			</p>
-			<p>Em que, $c_n$ corresponde ao n-ésimo coeficiente da série de Fourier de $g(t)$, e $d_n$ ao n-ésimo coeficiente da série de Fourier de $h(t)$.</p>
-				
-		</center>
-			   </div>
-
-		</section>
-
-
-			
-		<section>
-
-			<div class="slide-title">
-				<h2>Propriedades da Série de Fourier</h2>
-			</div>
-			<div class="slide-content">
-<center>
-				<ul>
-
-					<li>
-						Linearidade:
-						$$
-						\mathcal{S}_F\{\alpha g(t)+\beta h(t)\}=\alpha c_n+\beta d_n
-						$$
-					</li>
-					<li>
-						Deslocamento no tempo:
-						$$
-						\mathcal{S}_F\{g(t-t_0)\}=e^{-jn\omega_0 t_0}c_n
-						$$
-					</li>
-					<li>
-						Deslocamento na frequência:
-						$$
-						\mathcal{S}_F\{e^{jm\omega_0 t}g(t)\}=c_{n-m}
-						$$
-					</li>
-				</ul>
-		</center>
-			   </div>
-
-		</section>
-
-
-		<section>
-
-			<div class="slide-title">
-				<h2>Propriedades da Série de Fourier</h2>
-			</div>
-			<div class="slide-content">
-			
-				<center>
-				<ul>
-
-					
-					<li>Inversão no tempo:
-						$$
-						\mathcal{S}_F\{g(-t)\}=c_{-n}
-						$$
-					</li>
-					<li>
-						Convolução periódica:
-						$$
-						\mathcal{S}_F\{g(t)\ast h(t)\}=Tc_n d_n
-						$$
-					</li>
-					
-				</ul>
-			</center>
-			   </div>
-
-		</section>
-
-
-		<section>
-
-			<div class="slide-title">
-				<h2>Propriedades da Série de Fourier</h2>
-			</div>
-			<div class="slide-content">
-			
-				<center>
-				<ul>
-
-				
-					<li>Multiplicação no tempo:
-$$
-\mathcal{S}_F\{g(t)h(t)\}=\sum_{l=-\infty}^\infty c_l d_{n-l}
-$$
-
-					</li>
-					<li>
-						Derivadas
-						$$
-						\mathcal{S}_F\Bigl\{\frac{dg}{dt}\Bigr\}=jn\omega_0 c_n
-						$$
-
-					</li>
-				</ul>
-			</center>
-			   </div>
-
-		</section>
-
-
-
-			<section>
-
-			<div class="slide-title">
-				<h2>Exemplo:</h2>
-			</div>
-			<div class="slide-content">
-			
-				<center>
-				Sabendo que 
-						$$
-						\mathcal{S}_F\Bigl\{\frac{dg}{dt}\Bigr\}=jn\omega_0 c_n
-						$$
-					Determine a série de Fourier da função 
-					$$
-					g(t)=\begin{cases} 
-					1, & \text{se } 0\leq t < T/2\\
-					-1, & \text{se } T/2\leq t < T
-					\end{cases}
-					$$
-
-			</center>
-			   </div>
-
-		</section>
-
 		
 
 
@@ -851,7 +887,7 @@ $$
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
 
-				<h1>Parte II<br>exemplo em 2D</h1>
+				<h1>Exemplo em 2D</h1>
 		</center>
 			   </div>
 
