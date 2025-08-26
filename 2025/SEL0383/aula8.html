@@ -29,7 +29,7 @@
 					<div class="logo"><img src="../../images/sel.png"/> </div>
 					<div class="logo2"><img src="../../images/usp.png"/> </div>
 					<div class="title">
-					<h2>Aula 8: <br>Sinais em tempo discreto<br>SEL0383</h2>
+					<h2>Aula 8: <br>Introdução aos Sinais em tempo discreto<br>SEL0383</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
@@ -63,7 +63,8 @@
 					   <li>Definição de sinais em tempo discreto;</li>
 					   <li>Propriedades de sinais em tempo discreto;</li>
 					   <li>Convolução de sinais em tempo discreto;</li>
-						<li>Exemplos</li>
+					   <li>Série de Fourier em tempo discreto;</li>
+						<li>Exemplos.</li>
 				</ul>
 			
 		</div>
@@ -95,6 +96,51 @@
 	</section>
 
 
+			
+		<section>
+
+			<div class="slide-title">
+				<h2>Notação do Sinal em Tempo Discreto
+				</h2>
+			</div>
+			<div class="slide-content">
+						
+						<center class="">
+							<p>Tempo contínuo:</p>
+							<p class="lightup2">
+							$$
+							g:\mathbb{R}\to\mathbb{R} \Rightarrow g(t),\quad t\in\mathbb{R}
+							$$
+							</p>
+							<p>Tempo discreto:</p>
+							<p class="lightup2">
+							$$
+							g:\mathbb{Z}\to\mathbb{R} \Rightarrow g[k],\quad k \in\mathbb{Z}
+							$$
+							</p>
+						</center>
+
+		</div>
+		
+	</section>
+
+	
+
+
+	<section>
+
+			<div class="slide-title">
+				<h2>Exemplos de sinais Discretos
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<img src="../../images/conversao_amostragem_quantizacao.png" width="900">
+				</center>
+
+		</div>
+		
+	</section>
 
 
 		<section>
@@ -104,11 +150,25 @@
 				</h2>
 			</div>
 			<div class="slide-content">
-						
-						<center class=""><p align="center">Tempo Contínuo vs Tempo Discreto</p>
-							<img src="../../images/sinal_discreto.png" alt="">
-							<p style="transform: translate(0,-2rem);">$g:\mathbb{Z}\to\mathbb{R}$</p>
-						</center>
+				<center>
+					<img src="../../images/conversor_adc.png" width="800">
+				</center>
+
+		</div>
+		
+	</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Principal Diferença
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<img src="../../images/integral_discreta_vs_continua.jpg" width="600">
+				</center>
 
 		</div>
 		
@@ -123,10 +183,12 @@
 			</div>
 			<div class="slide-content">
 						
-						<p>O produto escalar entre dois sinais $x[n]$ e $y[n]$ é definido como:</p>
-						$$\langle x[n],y[n]\rangle = \sum_{n=-\infty}^{\infty} x[n]^*y[n]$$
+						<p>O produto escalar entre dois sinais $x[k]$ e $y[k]$ é definido como:</p>
+					<p class="lightup">
+						$$\langle x[k],y[k]\rangle = \sum_{k=-\infty}^{\infty} x[k]^*y[k]$$
+						</p>
 						<p>Se o produto escalar for zero, os sinais são ortogonais.</p>
-						$$x[n]\perp y[n] \Leftrightarrow \langle x[n],y[n]\rangle = 0$$
+						$$x[k]\perp y[k] \Leftrightarrow \langle x[k],y[k]\rangle = 0$$
 
 		</div>
 		
@@ -142,28 +204,89 @@
 			</div>
 			<div class="slide-content">
 						
-						A norma de um sinal $x[n]$ é definida como:
-						$$\|x[n]\| = \sqrt{\langle x[n],x[n]\rangle} = \sqrt{\sum_{n=-\infty}^{\infty} |x[n]|^2}$$
-						<p>Um sinal é de energia finita se $\|x[n]\| < \infty$.</p>
-						<p>Um sinal é de potência finita se $\lim_{N\to\infty} \frac{1}{2N+1}\sum_{n=-N}^{N} |x[n]|^2 < \infty$</p>	
+						A norma de um sinal $x[k]$ é definida como:
+						<p class="lightup">
+						$$\|x[k]\| = \sqrt{\langle x[k],x[k]\rangle} = \sqrt{\sum_{k=-\infty}^{\infty} |x[k]|^2}$$
+						</p>
+					
+		</div>
+		
+	</section>
+
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Energia
+				</h2>
+			</div>
+			<div class="slide-content">
+						
+						A energia de um sinal $x[k]$ é definida como:
+						<p class="lightup">
+						$$E = \sum_{k=-\infty}^{\infty} |x[k]|^2$$
+						</p>
+						<p align="center">Um sinal é de energia se $\|x[k]\| < \infty$.</p>				
 
 		</div>
 		
 	</section>
 
 
-				<section>
+	
+			<section>
 
 			<div class="slide-title">
-				<h2>Sinal Par vs Ímpar
+				<h2>Potência
 				</h2>
 			</div>
 			<div class="slide-content">
 						
-					Um sinal $x[n]$ é par se:
-					$$x[n] = x[-n]$$
-					Um sinal $x[n]$ é ímpar se:
-					$$x[n] = -x[-n]$$
+					A  potência de um sinal $x[k]$ é definida como:
+						<p class="lightup">
+						$$P_\text{med} = \lim_{N\to\infty} \frac{1}{2N+1}\sum_{k=-N}^{N} |x[k]|^2$$
+						</p>
+						<p  align="center">Um sinal é de potência finita se $\lim_{N\to\infty} \frac{1}{2N+1}\sum_{n=-N}^{N} |x[k]|^2 < \infty$</p>	
+
+		</div>
+		
+	</section>
+
+
+		
+					<section>
+
+			<div class="slide-title">
+				<h2>Sinal Par
+				</h2>
+			</div>
+			<div class="slide-content">
+						
+					<center>
+						<img src="../../images/cossenoide_discreta.png" width="700">
+							$$x[k] = x[-k]$$
+				</center>
+						
+
+		</div>
+		
+	</section>
+
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Sinal Ímpar
+				</h2>
+			</div>
+			<div class="slide-content">
+						
+					<center>
+						<img src="../../images/senoide_discreta.png" width="700">
+						$$x[k] = -x[-k]$$
+				</center>
 						
 
 		</div>
@@ -181,10 +304,12 @@
 						
 				
 	<p>Todo sinal pode ser escrito como a soma de um sinal par e um ímpar:</p>
-					$$x[n] = x_{par}[n] + x_{impar}[n]$$
+	<p class="lightup">
+					$$x[k] = x_{p}[k] + x_{i}[k]$$
+					</p>
 					em que:
-					$$x_{par}[n] = \frac{x[n] + x[-n]}{2}$$
-					$$x_{impar}[n] = \frac{x[n] - x[-n]}{2}$$		
+					$$x_{p}[k] = \frac{x[k] + x[-k]}{2}$$
+					$$x_{i}[k] = \frac{x[k] - x[-k]}{2}$$		
 		</div>
 		
 	</section>
@@ -201,12 +326,13 @@
 				</h2>
 			</div>
 			<div class="slide-content">
-						
-			O sinais básicos em tempo discreto são:
-			<ul>
-				<li>Impulso unitário: $\delta[n] = \begin{cases} 1, & n=0 \\ 0, & n\neq 0 \end{cases}$</li>
-			
-			</ul>								
+							
+					<center>
+						<p>Impulso Unitário</p>
+						<p>$\delta[k] = \begin{cases} 1, & k=0 \\ 0, & k\neq 0 \end{cases}$</p>
+							<img src="../../images/impulso_discreto.png" width="500">
+						</center>
+								
 		</div>
 		
 	</section>
@@ -221,11 +347,12 @@
 				</h2>
 			</div>
 			<div class="slide-content">
-						
-			O sinais básicos em tempo discreto são:
-			<ul>
-				<li>Degrau unitário: $u[n] = \begin{cases} 1, & n\geq 0 \\ 0, & n< 0 \end{cases}$</li>
-			</ul>								
+				<center>
+								<p>Degrau unitário </p>
+					<p>$u[k] = \begin{cases} 1, & k\geq 0 \\ 0, & k< 0 \end{cases}$</p>
+						<img src="../../images/degrau_unitario_discreto.png" width="500">
+					</center>
+	
 		</div>
 		
 	</section>
@@ -238,12 +365,14 @@
 				</h2>
 			</div>
 			<div class="slide-content">
-						
-			O sinais básicos em tempo discreto são:
-			<ul>
-				<li>Sinal retangular: $G_N[n] = \begin{cases} 1, & |n|\leq \frac{N}{2} \\ 0, & |n|> \frac{N}{2} \end{cases}$</li>
-				
-			</ul>								
+						<center>
+			<p>Sinal retangular</p>
+				$G_N[k] = \begin{cases} 1, & |k|\leq \frac{N}{2} \\ 0, & |k|> \frac{N}{2} \end{cases}$
+				<p>
+				<img src="../../images/gate_discreto.png" width="500">
+				</p>
+				</center>
+									
 		</div>
 		
 	</section>
@@ -258,54 +387,93 @@
 			</div>
 			<div class="slide-content">
 						
-			O sinais básicos em tempo discreto são:
+			<center>
 			<p>
-			<ul>
-				<li>Sinal exponencial: $x[n] = a^n$</li>
-	
-			</ul>								
+			Sinal exponencial: $$x[k] = a^k$$</p>
 			</p>
+			<img src="../../images/exp_discreta.png" width="500">
+			</center>
 		</div>
 		
 	</section>
-
-
-		
-			<section>
-
-			<div class="slide-title">
-				<h2>Sinais básicos:
-				</h2>
-			</div>
-			<div class="slide-content">
-						
-			O sinais básicos em tempo discreto são:
-			
-			<ul>
-				<li>Sinal senoidal: $x[n] = A\cos(\omega n + \phi)$</li>
-			</ul>								
-		</div>
-		
-	</section>
-
 
 
 				<section>
 
 			<div class="slide-title">
-				<h2>Convolução:
+				<h2>Convolução
 				</h2>
 			</div>
 			<div class="slide-content">
 						
-		A Convolução entre dois sinais $x[n]$ e $h[n]$ é definida como:
-			$$y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]h[n-k]$$
-			<p>ou seja, o sinal $y[n]$ é a soma ponderada de todas as versões deslocadas do sinal $h[n]$, no qual os pesos são dados pelos valores	 do sinal $x[n]$.</p>	
+		A Convolução entre dois sinais $x[k]$ e $h[k]$ é definida como:
+		<p class="lightup">
+			$$y[k] = x[k] * h[k] = \sum_{k=-\infty}^{\infty} x[n]h[k-n]$$
+			</p>
+			<p>ou seja, o sinal $y[k]$ é a soma ponderada de todas as versões deslocadas do sinal $h[k]$, no qual os pesos são dados pelos valores	 do sinal $x[k]$.</p>	
 			
 									
 		</div>
 		
 	</section>
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Convolução
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/convolucao_exemplo0.png" width="850">
+		</center>
+									
+		</div>
+		
+	</section>
+
+
+					<section>
+
+			<div class="slide-title">
+				<h2>Convolução
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/convolution_discrete_gate_gate.gif" width="1400">
+		</center>
+									
+		</div>
+		
+	</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Convolução
+				</h2>
+			</div>
+			<div class="slide-content">
+						
+		A Convolução entre dois sinais $x[k]$ e $h[k]$ é definida como:
+		
+			<p align="center">Propriedades:</p>	
+			<center>
+			<ul>
+				<li>Comutatividade: <br>$x_1[k]*x_2[k]=x_2[k]*x_1[k]$</li>
+				<li>Distributividade: <br>$x_1[k]*(x_2[k]+x_3[k])=x_1[k]*x_2[k]+x_1[k]*x_3[k]$</li>
+				<li>Associatividade: <br>$x_1[k]*(x_2[k]*x_3[k])=(x_1[k]*x_2[k])*x_3[k]$</li>
+			</ul>
+			</center>
+									
+		</div>
+		
+	</section>
+
+
+		
 
 
 
@@ -316,13 +484,124 @@
 				</h2>
 			</div>
 			<div class="slide-content">
-						
-		a convolução com o impulso unitário não altera o sinal:
-			$$x[n] * \delta[n] = x[n]$$
+		<center>
+		A convolução com o impulso unitário não altera o sinal:
+		<p>&nbsp;</p>
+		<p class="lightup">
+			$$x[k] * \delta[k] = x[k]$$
+			</p>
 			<p>ou seja, o impulso é o elemento neutro da convolução.</p>					
+			</center>				
 		</div>
 		
 	</section>
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Convolução com o Impulso:
+				</h2>
+			</div>
+			<div class="slide-content">
+		<center>
+		A convolução com o impulso unitário não altera o sinal:
+		<p>&nbsp;</p>
+		<p class="lightup">
+			$$x[k]=\sum_{n=-\infty}^\infty x[n]\delta[n-k] $$
+			</p>
+			<p>ou seja, o impulso também é uma base de representação em tempo discreto.</p>					
+			</center>				
+		</div>
+		
+	</section>
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Convolução com o Impulso:
+				</h2>
+			</div>
+			<div class="slide-content">
+		<center>
+				<p>&nbsp;</p>
+		Para caso de sinais finitos ($x[k]\neq 0: k\in [0,N]$):
+	
+		<p class="lightup">
+			$$x[k]=\sum_{n=0}^{N} x[n]\delta[n-k] $$
+			</p>
+			<p>ou seja, o impulso também é uma base de representação em tempo discreto.</p>					
+			</center>				
+		</div>
+		
+	</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Convolução com o Impulso:
+				</h2>
+			</div>
+			<div class="slide-content">
+		<center>
+		A convolução com o impulso unitário não altera o sinal:
+		<p>&nbsp;</p>
+		<p class="lightup">
+			$$x[k] * \delta[k-n] = x[k-n]$$
+			</p>
+			<p>ou seja, o impulso é o elemento neutro da convolução.</p>					
+			</center>				
+		</div>
+		
+	</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Convolução:
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/convolucao_discreta_exemplo1.png" width="850">
+		</center>
+									
+		</div>
+			</section>
+
+
+					<section>
+
+			<div class="slide-title">
+				<h2>Convolução:
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/convolution_discrete_exemplo1.gif" width="1400">
+		</center>
+									
+		</div>
+			</section>
+
+
+
+					<section>
+
+			<div class="slide-title">
+				<h2>Convolução:
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/convolucao_simples_discreta.png" width="1000">
+		</center>
+									
+		</div>
+			</section>
 			
 
 
@@ -334,14 +613,33 @@
 				</h2>
 			</div>
 			<div class="slide-content">
-						
-		Um sinal $x[n]$ é periódico se existir um inteiro positivo $N$ tal que:
-			$$x[n] = x[n+N], \forall n$$
+						<p>&nbsp;</p>
+		Um sinal $x[k]$ é periódico se existir um inteiro positivo $N$ tal que:
+		<p class="lightup">
+			$$x[k] = x[n+N], \forall n$$
+			</p>
 			<p>O menor valor de $N$ que satisfaz a equação acima é chamado de período fundamental.</p>
-			<p>Um sinal periódico pode ser escrito como a soma de senos e cossenos (Série de Fourier).</p>		
+		
 		</div>
 		
 	</section>
+
+
+	
+		<section>
+
+			<div class="slide-title">
+				<h2>Dente de Serra
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/dente_serra_discreto.png" width="1100">
+		</center>
+									
+		</div>
+			</section>
+
 
 
 			<section>
@@ -352,18 +650,94 @@
 			</div>
 			<div class="slide-content">
 						
-	Um sinal periódico $x[n]$ com período $N$ pode ser escrito como:
-			$$x[n] = \sum_{k=0}^{N-1} X[k]e^{j\frac{2\pi}{N}kn}$$
+	Um sinal periódico $x[k]$ com período $N$ pode ser escrito como:
+	<p class="lightup">
+			$$x[k] = \sum_{n=0}^{N-1} c[n]e^{jn\omega_0k},\quad \omega_0=\frac{2\pi}{N}$$
+			</p>
 			em que:
-			$$X[k] = \frac{1}{N}\sum_{n=0}^{N-1} x[n]e^{-j\frac{2\pi}{N}kn}$$
-			<p>Os coeficientes $X[k]$ são chamados de coeficientes da Série de Fourier.</p>	
+			$$c[n] = \frac{1}{N}\sum_{k=0}^{N-1} x[k]e^{-jn\omega_0 k}$$
+			
 		</div>
 		
 	</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Dente de Serra
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/serie_fourier_discreta_1.png" width="1100">
+		</center>
+									
+		</div>
+			</section>
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Dente de Serra
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/serie_fourier_discreta_2.png" width="1100">
+		</center>
+									
+		</div>
+			</section>
 			
 			
 
+				<section>
 
+			<div class="slide-title">
+				<h2>Dente de Serra
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/serie_fourier_discreta_3.png" width="1100">
+		</center>
+									
+		</div>
+			</section>
+
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Dente de Serra
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/serie_fourier_discreta_4.png" width="1100">
+		</center>
+									
+		</div>
+			</section>
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Dente de Serra
+				</h2>
+			</div>
+			<div class="slide-content">
+						<center>
+		<img src="../../images/serie_fourier_discreta_5.png" width="1100">
+		</center>
+									
+		</div>
+			</section>
 
 
 
