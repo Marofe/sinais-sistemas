@@ -118,9 +118,170 @@
 		</section>
 
 
-		
+			<section>
+
+			<div class="slide-title">
+				<h2>Gate </h2>
+			</div>
+			<div class="slide-content">
+				<p>&nbsp;</p>
+			Considere o sinal $$g(t)=G_T(t)=\begin{cases}
+			1, \text{ se } |t|\le \frac{T}{2}\\
+			0, \text{ se } |t|>\frac{T}{2} 
+			\end{cases}$$ 
+	 
+		<center class="lightup">
+		$$ G(\omega)=?$$
+		</center>
+
 
 		
+				   </div>
+
+		</section>
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Gate </h2>
+			</div>
+			<div class="slide-content">
+				<p>&nbsp;</p>
+			Considere o sinal $$g(t)=G_T(t)=\begin{cases}
+			1, \text{ se } |t|\le \frac{T}{2}\\
+			0, \text{ se } |t|>\frac{T}{2} 
+			\end{cases}$$ 
+	 
+		<center class="lightup">
+		$$ G(\omega)=T\text{sinc}\Bigl(\frac{\omega T}{2}\Bigr)$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Sinc </h2>
+			</div>
+			<div class="slide-content">
+				<p>&nbsp;</p>
+			Considere o sinal $$x(t)=\text{sinc}(at)=\begin{cases}
+			\frac{\sin(at)}{at}, \text{ se } t\neq 0\\
+			1, \text{ se } t=0 
+			\end{cases}$$ 
+	 
+		<center class="lightup">
+		$$ X(\omega)=?$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Sinc </h2>
+			</div>
+			<div class="slide-content">
+				<p>&nbsp;</p>
+			Considere o sinal $$x(t)=\text{sinc}(at)=\begin{cases}
+			\frac{\sin(at)}{at}, \text{ se } t\neq 0\\
+			1, \text{ se } t=0 
+			\end{cases}$$ 
+	 
+		<center class="lightup">
+		$$ X(\omega)=\frac{\pi}{a}G_{2a}(\omega)$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+		
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Integral da função sinc </h2>
+			</div>
+			<div class="slide-content">	
+	 <p>&nbsp;</p>
+	 <p>&nbsp;</p>
+		<center class="lightup">
+			
+		$$
+			I=\int_{-\infty}^\infty \text{sinc}(t)dt =?
+		$$
+		
+		</center>
+
+
+
+		
+				   </div>
+
+		</section>
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Energia da função sinc </h2>
+			</div>
+			<div class="slide-content">	
+				Seja $$g(t)=\text{sinc}(at)$$ com $a>0$.
+		<center class="lightup">
+			
+		$$
+			\|g(t)\|^2=?
+		$$
+		
+		</center>
+
+
+
+		
+				   </div>
+
+		</section>
+
+
+		
+			<section>
+
+			<div class="slide-title">
+				<h2>Energia da função sinc </h2>
+			</div>
+			<div class="slide-content">	
+				Seja $$g(t)=\text{sinc}(at)$$ com $a>0$.
+		<center class="lightup">
+			
+		$$
+			\|g(t)\|^2=\frac{\pi}{a}
+		$$
+		
+		</center>
+
+
+
+		
+				   </div>
+
+		</section>
+
+	
 
 		
 		
@@ -189,6 +350,44 @@
 		</section>
 
 
+			<section>
+
+			<div class="slide-title">
+				<h2>Sinal Triangular </h2>
+			</div>
+			<div class="slide-content">
+<p class="lightup">
+			 $$\mathcal{F}\{\Lambda_T(t)\}=\mathcal{F}\{G_{T}(t)\}^2$$
+			</p>
+	 <center>
+	<img src="../../images/sinal_triangular.png" width="800">
+</center>
+
+		
+				   </div>
+
+		</section>
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Sinal Triangular </h2>
+			</div>
+			<div class="slide-content">
+<p class="lightup">
+			 $$\mathcal{F}\{\Lambda_T(t)\}=T^2\text{sinc}^2\Bigl(\frac{\omega T}{2}\Bigr)$$
+			</p>
+	 <center>
+	<img src="../../images/sinal_triangular.png" width="800">
+</center>
+
+		
+				   </div>
+
+		</section>
+
+
 
 		<section>
 
@@ -208,27 +407,25 @@
 		</section>
 
 
-		<section>
+			<section>
 
 			<div class="slide-title">
-				<h2>Integral da função sinc </h2>
+				<h2>Sinc^2</h2>
 			</div>
-			<div class="slide-content">	
-	 
-		<center class="lightup">
-			
-		$$
-			I=\int_{-\infty}^\infty \text{sinc}(t)dt = \pi
-		$$
-		
-		</center>
-
+			<div class="slide-content">
+				<p>&nbsp;</p>
+<p class="lightup">
+			 $$\mathcal{F}\{\text{sinc}^2(at)\}=\frac{\pi}{2a^2}\Lambda_{2a}(\omega)$$
+			</p>
 
 
 		
 				   </div>
 
 		</section>
+		
+
+		
 
 
 		<section>
@@ -237,7 +434,7 @@
 				<h2>Integral da função sinc </h2>
 			</div>
 			<div class="slide-content">	
-	 
+	 <p>&nbsp;</p>
 		<center class="lightup">
 			
 		$$
@@ -255,21 +452,19 @@
 
 
 
-		<section>
+	<section>
 
 			<div class="slide-title">
-				<h2>Energia da função sinc </h2>
+				<h2></h2>
 			</div>
 			<div class="slide-content">	
-				Seja $$g(t)=\text{sinc}(at)$$ com $a>0$.
-		<center class="lightup">
-			
-		$$
-			\|g(t)\|=?
-		$$
-		
-		</center>
 
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			<center>
+		<h1>PARTE II</h1>
+</center>
 
 
 		
@@ -284,11 +479,34 @@
 				<h2>Teorema de Parseval</h2>
 			</div>
 			<div class="slide-content">	
-			
+			<p>&nbsp;</p>
 		<center class="lightup">
 			
 		$$
 			\|g(t)\|^2=\frac{1}{2\pi}\int_{-\infty}^\infty |G(\omega)|^2 d\omega 
+		$$
+		
+		</center>
+
+
+
+		
+				   </div>
+
+		</section>
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Energia da função sinc </h2>
+			</div>
+			<div class="slide-content">	
+				Seja $$g(t)=\text{sinc}(at)$$ com $a>0$.
+		<center class="lightup">
+			
+		$$
+			\|g(t)\|=?
 		$$
 		
 		</center>
