@@ -77,14 +77,14 @@
 					<div class="logo"><img src="../../images/sel.png"/> </div>
 					<div class="logo2"><img src="../../images/usp.png"/> </div>
 					<div class="title">
-					<h2>Aula 15: <br>Filtros Analógicos - parte 1<br>SEL0383</h2>
+					<h2>Aula 15: <br>Transformada de Fourier para sinais Discreto<br>SEL0383</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
 				</div>
 					<div class="advisor">
 					
-					<p style="text-align: center;font-size: 0.8em;">07 de outubro de 2024</p>
+					<p style="text-align: center;font-size: 0.8em;"> 13 de outubro de 2025</p>
 				</div>
 
 				</section>
@@ -92,110 +92,23 @@
 
 
 				
-			
-			
-			
-
-
-
-		<section>
+				<section>
 
 			<div class="slide-title">
-				<h2>Filtros Ideais
-				</h2>
+				<h2>Exemplo de sinal real
+						</h2>
 			</div>
+			<p>&nbsp;</p>
 			<div class="slide-content">
-			<center class="lightup">
-				Um filtro ideal é um <b>sistema</b> projetado especificamente para remover certas frequências de um sinal sem alterar as demais frequências.
-			</center>
-			<center>
-				<ul>
-				<li>Filtro Passa-Baixa (FPB);</li>
-				<li>Filtro Passa-Alta (FPA)</li>
-				<li>Filtros Passa-Faixa (FPF).</li>
-				<li>Filtros Rejeita-Faixa (FRF).</li>
-			</ul>
-			</center>
+				<center>
+					<img src="../../images/15s_beethoven.png" width="900">
+				</center>
+
 		</div>
 		
 	</section>
-
-
-	
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtros Passa Baixa
-		</h2>
-	</div>
-	<div class="slide-content">
-	<center>
-	<img src="../../images/filtro_passa_baixa_positivo.png" width="800">
-	
-	</center>
-</div>
-
-</section>
-
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtros Passa Alta
-		</h2>
-	</div>
-	<div class="slide-content">
-	<center>
-	<img src="../../images/filtro_passa_alta_positivo.png" width="800">
-	
-	</center>
-</div>
-
-</section>
-
-
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtros Passa Faixa
-		</h2>
-	</div>
-	<div class="slide-content">
-	<center>
-	<img src="../../images/filtro_passa_faixa_positivo.png" width="800">
-	
-	</center>
-	<center class="lightup">
-	FPF=FPA+FPB		
-	</center>
-</div>
-
-</section>
-
-
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtros Rejeita Faixa
-		</h2>
-	</div>
-	<div class="slide-content">
-	<center>
-	<img src="../../images/filtro_rejeita_faixa_positiva.png" width="750">
-	
-	</center>
-	<center class="lightup">
-	FPF=FPB+FPA		
-	</center>
-</div>
-
-</section>
+			
+			
 
 
 
@@ -209,10 +122,9 @@
 		<p>&nbsp;</p>
 
 		<ul>
-			<li>Filtro Analógico Passa Baixa RC</li>
-			<li>Filtro Analógico Passa Alta RL</li>
-			<li>Filtros Analógico Passa-Faixa RLC</li>
-			<li>Filtros Analógico Rejeita-Faixa RLC</li>
+			<li>Revisão de Sinais em tempo discreto;</li>
+			<li>Transformada de Fourier Discreta</li>
+			<li>Introdução à FFT</li>
 			<li>Exemplos.</li>
 		
 		</ul>
@@ -224,861 +136,857 @@
 
 <section>
 
-	<div class="slide-title">
-		<h2>Divisor de tensão
-		</h2>
-	</div>
-	<div class="slide-content">
-		<center>
-		<img src="../../images/divisor_tensao.png" width="700">
-		<p class="lightup">
-		$
-			V_o(\omega)=V_i(\omega)\frac{Z_2}{Z_1+Z_2}
-		$
-	</p>
-	</center>
-	
-</div>
-
-</section>
-
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Impedância do Resistor
-		</h2>
-	</div>
-	<div class="slide-content">
-		<center>
-			<p>&nbsp;</p>
-		<img src="../../images/resistor.png" width="500">
-		<p class="lightup">
-		$$
-			Z_R=R
-		$$
-	</p>
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Impedância do Capacitor
-		</h2>
-	</div>
-	<div class="slide-content">
-		<center>
-					<img src="../../images/capacitor.png" width="300">
-		<p class="lightup">
-		$$
-			Z_C=\frac{1}{j\omega C}
-		$$
-	</p>
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Impedância do Indutor
-		</h2>
-	</div>
-	<div class="slide-content">
-		<p>&nbsp;</p>
-		<center>
-					<img src="../../images/indutor.png" width="500">
-		<p class="lightup">
-		$$
-			Z_L=j\omega L
-		$$
-	</p>
-	</center>
-	
-</div>
-
-</section>
-
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Impedância
-		</h2>
-	</div>
-	<div class="slide-content">
-		<p>&nbsp;</p>
-		<center>
-			<table>
-				<tr><td align="center">Resistor</td><td align="center">Capacitor</td><td align="center">Indutor</td></tr>
-				<tr><td><img src="../../images/resistor.png" width="400"></td>
-				<td><img src="../../images/capacitor.png" width="250"></td>
-				<td><img src="../../images/indutor.png" width="400"></td></tr>
-				<tr><td align="center">$Z_R=R$</td><td align="center">$Z_C=\frac{1}{j\omega C}$</td><td align="center">$Z_L=j\omega L$</td></tr>
-			</table>				
+			<div class="slide-title">
+				<h2>Contínuo vs Discreto
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center class="fragment current-visible"><p align="center">Tempo Contínuo vs Tempo Discreto</p>
+							<img src="../../images/sinal_continuo.png" alt="">
+						<p>$g:\mathbb{R}\to\mathbb{R}$</p>
+						</center>
 					
-	
-	</center>
-	
-</div>
+						
+						<center class="fragment current-visible"><p align="center">Tempo Contínuo vs Tempo Discreto</p>
+							<img src="../../images/sinal_discreto.png" alt="">
+							<p style="transform: translate(0,-2rem);">$g:\mathbb{Z}\to\mathbb{R}$</p>
+						</center>
 
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-baixa RC
-		</h2>
-	</div>
-	<div class="slide-content">
+		</div>
 		
-		<center>
-					<img src="../../images/filtro_RC.png" width="600">
-		<p class="lightup">
-		$
-			H(\omega)=\frac{\frac{1}{RC}}{j\omega+\frac{1}{RC}}
-		$
-	</p>
-	</center>
-	
-</div>
-
-</section>
+	</section>
 
 
-<section>
+			
+		<section>
 
-	<div class="slide-title">
-		<h2>Filtro Passa-baixa RC
-		</h2>
-	</div>
-	<div class="slide-content">
+			<div class="slide-title">
+				<h2>Notação do Sinal em Tempo Discreto
+				</h2>
+			</div>
+			<div class="slide-content">
+						
+						<center class="">
+							<p>Tempo contínuo:</p>
+							<p class="lightup2">
+							$$
+							g:\mathbb{R}\to\mathbb{R} \Rightarrow g(t),\quad t\in\mathbb{R}
+							$$
+							</p>
+							<p>Tempo discreto:</p>
+							<p class="lightup2">
+							$$
+							g:\mathbb{Z}\to\mathbb{R} \Rightarrow g[k],\quad k \in\mathbb{Z}
+							$$
+							</p>
+						</center>
+
+		</div>
 		
-		<center>
-					<img src="../../images/filtro_RC.png" width="600">
-		<p class="lightup">
-		$
-			|H(\omega)|=\frac{\frac{1}{RC}}{\sqrt{\omega^2+\frac{1}{(RC)^2}}},\quad \theta(\omega)=-\arctan(\frac{\omega}{RC})
-		$
-	</p>
-	</center>
+	</section>
+
 	
-</div>
-
-</section>
 
 
+	<section>
 
-<section>
+			<div class="slide-title">
+				<h2>Exemplos de sinais Discretos
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<img src="../../images/conversao_amostragem_quantizacao.png" width="900">
+				</center>
 
-	<div class="slide-title">
-		<h2>Filtro Passa-baixa RC
-		</h2>
-	</div>
-	<div class="slide-content">
+		</div>
 		
-		<center>
-					<img src="../../images/filtro_rc_espectro.png" width="800">
+	</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplos de sinais Discretos
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<img src="../../images/conversor_adc.png" width="800">
+				</center>
+
+		</div>
 		
-	</center>
+	</section>
+
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier Continua
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+						Considere um sinal $g(t)$ com $t\in \mathbb{R}$. A Transformada de Fourier Continua é dada por:
+					<p class="lightup">
+				$$
+					G_c(\omega)=\int_{-\infty}^{\infty} g(t)e^{-j\omega t} dt
+				$$
+				</p>
+				Então,
+				$$
+					g(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty} G_c(\omega)e^{j\omega t} d\omega
+				$$
+				</center>
+
+		</div>
+		
+	</section>
+
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier Discreta
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Considere um sinal $g[k]$ com $k\in \mathbb{Z}$. A Transformada de Fourier Discreta é dada por:
+					<p class="lightup">
+				$$
+					G_d(e^{j\omega})=\sum_{k=-\infty}^{\infty} g[k]e^{-j\omega k} dt
+				$$
+				</p>
+				Então,
+				$$
+					g[k]=\frac{1}{2\pi}\int_{-\pi}^{\pi} G_d(e^{j\omega})e^{j\omega k} d\omega
+				$$
+				</center>
+
+		</div>
+		
+	</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier Discreta
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Considere um sinal $g[k]$ com $k\in \mathbb{Z}$. A Transformada de Fourier Discreta é dada por:
+					<p class="lightup">
+				$$
+					G_d(e^{j\omega})=\mathcal{F}_d\{g[k]\}
+				$$
+				</p>
+				Então,
+				$$
+					g[k]=\mathcal{F}_d^{-1}\{G_d(e^{j\omega})\}
+				$$
+				</center>
+
+		</div>
+		
+	</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier Discreta
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Considere um sinal $g[k]$ com $k\in \mathbb{Z}$. A Transformada de Fourier Discreta é dada por:
+					<p class="lightup">
+				$$
+					G_d(e^{j\omega})=\mathcal{F}_d\{g[k]\}
+				$$
+				</p>
+				Par transformada de Fourier Discreta:
+				$$
+					g[k]\Leftrightarrow G_d(e^{j\omega})
+				$$
+				</center>
+
+		</div>
+		
+	</section>
+
+
+
 	
-</div>
+		<section>
 
-</section>
+			<div class="slide-title">
+				<h2>Exemplo
+				</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<p>&nbsp;</p>
+					
+					<p class="lightup">
+				$$
+					\mathcal{F}_d\{a^ku[k]\}=?
+				$$
+				com $|a|<1$.
+				</p>
+				
+				</center>
+
+		</div>
+		
+	</section>
 
 
-<section>
+	
+		<section>
 
-	<div class="slide-title">
-		<h2>Módulo em dB
-		</h2>
-	</div>
-	<div class="slide-content">
-		<p>&nbsp;</p>
+			<div class="slide-title">
+				<h2>Propriedade da Linearidade </h2>
+			</div>
+			<div class="slide-content">
+			Considere dois sinais $g[k]$ e $h[k]$.
+	 
 		<center class="lightup">
-				$$
-					|H(\omega)|_{dB}=20\log_{10}(|H(\omega)|)
-				$$
-	</center>
-	<p>&nbsp;</p>
-
-	<center class="lightup">
-		Espectro de Fourier (parte positiva) = Diagrama de Bode
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-baixa RC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_rc_espectro_db.png" width="800">
-		
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Frequência de corte
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-		Teorema de Parseval:				
+			Se 
+			$$ 
+			g[k] \Longleftrightarrow G_d(e^{j\omega}), \quad h[k] \Longleftrightarrow H_d(e^{j\omega})
 			$$
-			\|h(t)\|^2=\frac{1}{2\pi}\int_{-\infty}^\infty |H(\omega)|^2d\omega 
+			então
 			$$
-		Portanto,
-		<p class="lightup">
+			\alpha g[k]+\beta h[k] \Longleftrightarrow \alpha G_d(e^{j\omega})+\beta H_d(e^{j\omega})
+			$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Propriedade: Deslocamento no tempo </h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$.
+	 
+		<center class="lightup">
+			Se 
+			$$ 
+			g[k] \Longleftrightarrow G_d(e^{j\omega})
+			$$
+			então
+			$$
+			g[k-n_0] \Longleftrightarrow e^{-j\omega n_0}G_d(e^{j\omega})
+			$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Propriedade: Deslocamento na frequência </h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$.
+	 
+		<center class="lightup">
+			Se 
+			$$ 
+			g[k] \Longleftrightarrow G_d(e^{j\omega})
+			$$
+			então
+			$$
+			e^{j\omega_0 k}g[k] \Longleftrightarrow G_d(e^{j(\omega-\omega_0)})
+			$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Propriedade: Diferença no tempo </h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$.
+	 
+		<center class="lightup">
+			Se 
+			$$ 
+			g[k] \Longleftrightarrow G_d(e^{j\omega})
+			$$
+			então
+			$$
+			g[k]-g[k-1] \Longleftrightarrow (1-e^{-j\omega})G_d(e^{j\omega})
+			$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Propriedade: Somatório no tempo </h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$.
+	 
+		<center class="lightup">
+			Se 
+			$$ 
+			g[k] \Longleftrightarrow G_d(e^{j\omega})
+			$$
+			então
+			$$
+			\sum_{n=-\infty}^k g[n] \Leftrightarrow \frac{1}{1-e^{-j\omega}}G_d(e^{j\omega})+\pi G_d(1)\sum_{m=-\infty}^{\infty}\delta(\omega-2\pi m)
+			$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+
+					<section>
+
+			<div class="slide-title">
+				<h2>Propriedade: diferenciação na frequência</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$.
+	 
+		<center class="lightup">
+			Se 
+			$$ 
+			g[k] \Longleftrightarrow G_d(e^{j\omega})
+			$$
+			então
+			$$
+			kg[k] \Leftrightarrow j\frac{dG_d(e^{j\omega})}{d\omega}
+			$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Propriedade: convolução no tempo</h2>
+			</div>
+			<div class="slide-content">
+			Considere os sinais $g[k]$ e $h[k]$.
+	 
+		<center class="lightup">
+			Se 
+			$$ 
+			g[k] \Longleftrightarrow G_d(e^{j\omega}),\quad 	h[k] \Longleftrightarrow H_d(e^{j\omega})
+			$$
+			então
+			$$
+			g[k]\ast h[k] \Leftrightarrow G_d(e^{j\omega})H_d(e^{j\omega})
+			$$
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+
+						<section>
+
+			<div class="slide-title">
+				<h2>Teorema de Parseval </h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$.
+	 <p>&nbsp;</p>
+		<center class="lightup">
 		$$
-			|H(\omega)|^2\to \text{densidade de potência}
+			\sum_{k=-\infty}^{\infty} |g[k]|^2=\frac{1}{2\pi}\int_{-\pi}^{\pi} |G_d(e^{j\omega})|^2 d\omega
 		$$
-	</p>
-	</center>
-	
-</div>
-
-</section>
+		</center>
 
 
-<section>
-
-	<div class="slide-title">
-		<h2>Frequência de corte
-		</h2>
-	</div>
-	<div class="slide-content">
 		
-		<center>
-		
-		Supondo o espectro normalizado:
+				   </div>
+
+		</section>
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 <p>&nbsp;</p>
+		<center class="lightup">
 		$$
-			\max_\omega |H(\omega)|=1
+			G_d(e^{j\omega})=\mathcal{F}_d\{g[k]\}=\sum_{m=0}^{N} g[m]e^{j\omega m},\quad \omega\in\mathbb{R}
 		$$
-		<p class="lightup">
-			Meia-potência
+		</center>
+
+
+		
+				   </div>
+
+		</section>
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 <p>&nbsp;</p>
+		<center class="lightup">
 		$$
-			|H(B)|^2=\frac{1}{2}
+			G_d(e^{j\omega})=\mathcal{F}_d\{g[k]\}=\sum_{m=0}^{N} g[m]e^{j\omega m},\quad \omega\in\mathbb{R}
 		$$
-	</p>
-	<p>$\Rightarrow B$ é a frequência de corte do filtro.</p>
-	</center>
-	
-</div>
 
-</section>
+		</center>
 
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Frequência de corte
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-		
-		Supondo o espectro normalizado:
+		Como o sinal é finito, pode-se tomar
 		$$
-			\max_\omega |H(\omega)|=1
-		$$
-		<p class="lightup">
-			Meia-potência
-		$$
-			|H(B)|=\frac{1}{\sqrt{2}}
-		$$
-	</p>
-	<p>$\Rightarrow B$ é a frequência de corte do filtro.</p>
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Frequência de corte
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-		
-		Supondo o espectro normalizado:
-		$$
-			\max_\omega |H(\omega)|=1
-		$$
-		<p class="lightup">
-			Meia-potência
-		$$
-			|H(B)|_{dB}=20\log_{10}(\frac{1}{\sqrt{2}})\approx -3dB
-		$$
-	</p>
-	<p>$\Rightarrow B$ é a frequência de corte do filtro.</p>
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-baixa RC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_RC_meia_potencia.png" width="800">
-		
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-baixa RC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_RC_meia_potencia2.png" width="800">
-		
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Frequência de corte (B) p/ filtro RC
-		</h2>
-	</div>
-	<div class="slide-content">
-		<p>&nbsp;</p>
-		<center>
-		$$
-			|H(B)|=\frac{1}{\sqrt{2}}=\frac{\frac{1}{RC}}{\sqrt{B^2+\frac{1}{(RC)^2}}}
-		$$
-		
-	</center>
-
-	<center class="lightup">
-		$$
-		B=\frac{1}{RC}
-		$$
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-baixa RC
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_RC.png" width="600">
-					<center class="lightup">
-						$$
-						B=\frac{1}{RC}
-						$$
-					</center>
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Exemplo: 
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-				Obter um filtro RC para remover a componente de $25\rad/s$ do sinal
-
-				$$
-			g(t)=\cos(2t)+\cos(25t)
-				$$
-				<img src="../../images/sinal_para_filtrar.png" alt="">
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Exemplo: 
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-				Escolhendo $R=330\Omega$ e $C=1000uC$, resulta em 
-				<br>
-				$
-			B\approx 3 rad/s
-				$
-				<br>
-				<img src="../../images/sinal_filtrado.png" alt="">
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Exemplo: 
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-				Escolhendo $R=330\Omega$ e $C=1000uC$, resulta em 
-				<br>
-				$
-			B\approx 3 rad/s
-				$
-				<br>
-				<img src="../../images/sinal_filtrado2.png" alt="">
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-Alta RL
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_RL.png" width="600">
-					<center class="lightup">
-						$
-						H(\omega)=\frac{j\omega}{j\omega+\frac{R}{L}}
-						$
-					</center>
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-Alta RL
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_RL.png" width="600">
-					<center class="lightup">
-						$
-						|H(\omega)|=\frac{\omega}{\sqrt{\omega^2+(\frac{R}{L})^2}},\quad \theta(\omega)=\arctan(\frac{R}{\omega L})
-						$
-					</center>
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-Alta RL
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_rl_espectro.png" width="800">
-		
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-Alta RL (Diagram de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_rl_espectro_db.png" width="800">
-		
-	</center>
-	
-</div>
-
-</section>
-
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-Alta RL (Diagram de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_rl_meia_potencia.png" width="800">
-		
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-Alta RL (Diagram de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
-		
-		<center>
-					<img src="../../images/filtro_rl_meia_potencia2.png" width="800">
-		
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Frequência de corte (B) p/ filtro RL
-		</h2>
-	</div>
-	<div class="slide-content">
-		<p>&nbsp;</p>
-		<center>
-		$$
-			|H(B)|=\frac{1}{\sqrt{2}}=\frac{B}{\sqrt{B^2+(\frac{R}{L})^2}}
+			\omega=n\frac{2\pi}{N},\quad n=0,1,\ldots,N
 		$$
 		
-	</center>
 
-	<center class="lightup">
+
+		
+				   </div>
+
+		</section>
+
+
+				<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 <p>&nbsp;</p>
+		<center class="lightup">
 		$$
-		B=\frac{R}{L}
+			\hat{g}_n=G_d(e^{jn\frac{2\pi}{N}})=\sum_{m=0}^{N} g[m]e^{jn\frac{2\pi}{N} m},\quad n=0,1,\ldots,N
 		$$
-	</center>
-	
-</div>
 
-</section>
+		</center>
 
 
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-Alta RL
-		</h2>
-	</div>
-	<div class="slide-content">
 		
-		<center>
-					<img src="../../images/filtro_RL.png" width="600">
-			
-	<center class="lightup">
-		$
-		B=\frac{R}{L}
-		$
-	</center>
+				   </div>
 
-	</center>
-	
-</div>
-
-</section>
+		</section>
 
 
+					<section>
 
-<section>
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 
+		<center class="lightup">
+		$$
+			\underbrace{\begin{bmatrix}
+			g_0 \\
+			g_1\\
+			g_2\\
+			\vdots\\
+			g_N
+			\end{bmatrix}}_{\text{tempo}} \Longleftrightarrow \underbrace{\begin{bmatrix}
+			\hat{g}_0 \\
+			\hat{g}_1\\
+			\hat{g}_2\\
+			\vdots\\
+			\hat{g}_N
+			\end{bmatrix}}_{\text{frequência}}
+		$$
+		</center>
 
-	<div class="slide-title">
-		<h2>Filtro Passa-Faixa RLC
-		</h2>
-	</div>
-	<div class="slide-content">
+
 		
-		<center>
-					<img src="../../images/filtro_RLC.png" width="600">
-			
-	<center class="lightup">
-		$
-		H(\omega)=\frac{R}{R+j(\omega L-\frac{1}{\omega C})}
-		$
-	</center>
+				   </div>
 
-	</center>
-	
-</div>
-
-</section>
+		</section>
 
 
-<section>
 
-	<div class="slide-title">
-		<h2>Filtro Passa-Faixa RLC
-		</h2>
-	</div>
-	<div class="slide-content">
+					<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 <p>&nbsp;</p>
+		<center class="lightup">
+		$$
+			\hat{g}_0=g[0]e^{0}+g[1]e^{0}+\ldots+g[N]e^0
+		$$
+
+		</center>
+
+
 		
-		<center>
-					<img src="../../images/filtro_RLC.png" width="600">
-			
-	<center class="lightup">
-		$
-		B_0=\frac{1}{\sqrt{LC}}
-		$
-	</center>
+				   </div>
 
-	</center>
-	
-</div>
+		</section>
 
-</section>
+							<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 <p>&nbsp;</p>
+		<center class="lightup">
+		$$
+			\hat{g}_0=g[0]e^{0}+g[1]e^{0}+\ldots+g[N]e^0\\
+			\hat{g}_1=g[0]e^{0}+g[1]e^{j\frac{2\pi}{N}}+\ldots+g[N]e^{j\frac{2\pi}{N}N}\\
+		$$
+
+		</center>
 
 
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Passa-Faixa RLC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
 		
-		<center>
-					<img src="../../images/filtro_rlc_espectro.png" width="800">
-			
+				   </div>
 
-	</center>
-	
-</div>
-
-</section>
+		</section>
 
 
-<section>
+								<section>
 
-	<div class="slide-title">
-		<h2>Filtro Passa-Faixa RLC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 <p>&nbsp;</p>
+		<center class="lightup">
+		$$
+			\hat{g}_0=g[0]e^{0}+g[1]e^{0}+\ldots+g[N]e^0\\
+			\hat{g}_1=g[0]e^{0}+g[1]e^{j\frac{2\pi}{N}}+\ldots+g[N]e^{j\frac{2\pi}{N}N}\\
+			\vdots\\
+			\hat{g}_N=g[0]e^{0}+g[1]e^{j\frac{2\pi}{N}N}+\ldots+g[N]e^{j\frac{2\pi}{N}N^2}
+		$$
+
+		</center>
+
+
 		
-		<center>
-					<img src="../../images/filtro_rlc_meia_potencia.png" width="800">
-			
+				   </div>
 
-	</center>
-	
-</div>
-
-</section>
+		</section>
 
 
-<section>
 
-	<div class="slide-title">
-		<h2>Filtro Passa-Faixa RLC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
+		<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+
+		<center class="lightup">
+		$$
+		\begin{bmatrix}
+			\hat{g}_0 \\
+			\hat{g}_1\\
+			\hat{g}_2\\
+			\vdots\\
+			\hat{g}_N
+			\end{bmatrix}=\begin{bmatrix}
+			1 & 1 & 1 & \ldots & 1\\
+			1 & e^{j\frac{2\pi}{N}} & e^{j\frac{2\pi}{N}2} & \ldots & e^{j\frac{2\pi}{N}N}\\
+			1 & e^{j\frac{2\pi}{N}2} & e^{j\frac{2\pi		}{N}4} & \ldots & e^{j\frac{2\pi}{N}2N}\\
+			\vdots & \vdots & \vdots & \ddots & \vdots\\
+			1 & e^{j\frac{2\pi}{N}N} & e^{j\frac{2\pi}{N}2N} & \ldots & e^{j\frac{2\pi}{N}N^2}
+			\end{bmatrix}						
+			\begin{bmatrix}
+			g_0 \\
+			g_1\\
+			g_2\\	
+			\vdots\\
+			g_N
+			\end{bmatrix}	
+		$$
+
+		</center>
+
+
 		
-		<center>
-					<img src="../../images/filtro_rlc_meia_potencia2.png" width="800">
-			
+				   </div>
 
-	</center>
-	
-</div>
-
-</section>
+		</section>
 
 
-<section>
 
-	<div class="slide-title">
-		<h2>Filtro Rejeita-Faixa RLC
-		</h2>
-	</div>
-	<div class="slide-content">
+		<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+
+		<center class="lightup">
+		$$
+		\begin{bmatrix}
+			\hat{g}_0 \\
+			\hat{g}_1\\
+			\hat{g}_2\\
+			\vdots\\
+			\hat{g}_N
+			\end{bmatrix}=\begin{bmatrix}
+			1 & 1 & 1 & \ldots & 1\\
+			1 & \phi & \phi^2 & \ldots & \phi^N\\
+			1 & \phi^2 & \phi^4 & \ldots & \phi^{2N}\\
+			\vdots & \vdots & \vdots & \ddots & \vdots\\
+			1 & \phi^N & \phi^{2N} & \ldots & \phi^{N^2}
+			\end{bmatrix}						
+			\begin{bmatrix}
+			g_0 \\
+			g_1\\
+			g_2\\	
+			\vdots\\
+			g_N
+			\end{bmatrix}	
+		$$
+
+		</center>
+
+
 		
-		<center>
-					<img src="../../images/circuito_RLC_rejeita.png" width="700">
-			
-			<p class="lightup">$H(\omega)=\frac{j(\omega L-\frac{1}{\omega C})}{R+j(\omega L-\frac{1}{\omega C})}$
-			</p>
-	</center>
-	
-</div>
+				   </div>
 
-</section>
+		</section>
 
 
-<section>
 
-	<div class="slide-title">
-		<h2>Filtro Rejeita-Faixa RLC
-		</h2>
-	</div>
-	<div class="slide-content">
+			<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 
+		<center class="lightup">
+		$$
+		\begin{bmatrix}
+			\hat{g}_0 \\
+			\hat{g}_1\\
+			\hat{g}_2\\
+			\vdots\\
+			\hat{g}_N
+			\end{bmatrix}=\underbrace{\begin{bmatrix}
+			1 & 1 & 1 & \ldots & 1\\
+			1 & \phi & \phi^2 & \ldots & \phi^N\\
+			1 & \phi^2 & \phi^4 & \ldots & \phi^{2N}\\
+			\vdots & \vdots & \vdots & \ddots & \vdots\\
+			1 & \phi^N & \phi^{2N} & \ldots & \phi^{N^2}
+			\end{bmatrix}}_{\text{Matriz de Fourier}}						
+			\begin{bmatrix}
+			g_0 \\
+			g_1\\
+			g_2\\	
+			\vdots\\
+			g_N
+			\end{bmatrix}	
+		$$
+
+		</center>
+
+
 		
-		<center>
-					<img src="../../images/circuito_RLC_rejeita.png" width="700">
-			
-			<p class="lightup">$B_0=\frac{1}{\sqrt{LC}}$
-			</p>
-	</center>
-	
-</div>
+				   </div>
 
-</section>
+		</section>
 
-<section>
 
-	<div class="slide-title">
-		<h2>Filtro Rejeita-Faixa RLC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 <p>&nbsp;</p>
+	<p align="center">		Transformada de Fourier é apenas uma mudança de base!</p>
+		<center class="lightup">
+		$$
+		\hat{g}=F g
+		$$
+
+		</center>
+
+
 		
-		<center>
-					<img src="../../images/filtro_rlc_rejeita_espectro.png" width="800">
-			
-	
-	</center>
-	
-</div>
+				   </div>
 
-</section>
+		</section>
 
-<section>
 
-	<div class="slide-title">
-		<h2>Filtro Rejeita-Faixa RLC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 <p>&nbsp;</p>
+	<p align="center">		Transformada de Fourier Inversa é apenas uma mudança de base!</p>
+		<center class="lightup">
+		$$
+		g=F^{-1} \hat{g}
+		$$
+
+		</center>
+
+
 		
-		<center>
-					<img src="../../images/filtro_rlc_rejeita_meia_potencia.png" width="800">
-			
-	
-	</center>
-	
-</div>
+				   </div>
 
-</section>
+		</section>
 
-
-<section>
-
-	<div class="slide-title">
-		<h2>Filtro Rejeita-Faixa RLC (Diagrama de Bode)
-		</h2>
-	</div>
-	<div class="slide-content">
 		
+		
+
+			<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier de sinais finitos</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 
+		<center class="lightup">
+		$$
+		\hat{g}=F g
+		$$
+		</center>
 		<center>
-					<img src="../../images/filtro_rlc_rejeita_meia_potencia2.png" width="800">
-			
-	
-	</center>
-	
-</div>
+		Custo computacional: $$O(N^2)$$
+em que $N$ é o número de amostras do sinal.
 
-</section>
+		</center>
+				   </div>
 
+		</section>
 
 
 
+				<section>
+
+			<div class="slide-title">
+				<h2>Exemplo de sinal real
+						</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<img src="../../images/15s_beethoven.png" width="850">
+				</center>
+$N=659568$, logo o custo computacional é da ordem de $4.3\times 10^{11}$ operações.
+		</div>
+		
+	</section>
 
 
 
+			<section>
+
+			<div class="slide-title">
+				<h2>Transformada de Fourier Rápida (FFT)</h2>
+			</div>
+			<div class="slide-content">
+			Considere um sinal $g[k]$ com $k=0,1,\ldots,N$.
+	 
+		<center class="lightup">
+		$$
+		\hat{g}=\text{fft}(g)
+		$$
+		</center>
+		<center>
+		Custo computacional: $$O(N\log(N))$$
+em que $N$ é o número de amostras do sinal.
+
+		</center>
+				   </div>
+
+		</section>
 
 
+			<section>
 
+			<div class="slide-title">
+				<h2>Exemplo de sinal real (FFT)
+						</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<img src="../../images/15s_beethoven.png" width="850">
+				</center>
+$N=659568$, logo o custo computacional é da ordem de $1.3\times 10^{7}$ operações.
+		</div>
+		
+	</section>
 
 		
 				<section>
@@ -1092,13 +1000,16 @@
 							<p>&nbsp;</p>
 			
 							<h3>
-								Filtros Analógicos - parte 2
+								FFT e Aplicações da Transformada de Fourier Discreta
 							</h3>
 								
 				</center>
 					   </div>
 
 				</section>
+
+
+
 
 
 
