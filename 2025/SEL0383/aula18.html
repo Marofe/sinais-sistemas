@@ -77,14 +77,14 @@
 					<div class="logo"><img src="../../images/sel.png"/> </div>
 					<div class="logo2"><img src="../../images/usp.png"/> </div>
 					<div class="title">
-					<h2>Aula 18: <br>Introdução à Transformada de Laplace<br>SEL0383</h2>
+					<h2>Aula 19: <br>Representação de SLIT e Estabilidade<br>SEL0383</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
 				</div>
 					<div class="advisor">
 					
-					<p style="text-align: center;font-size: 0.8em;">5 de novembro de 2024</p>
+					<p style="text-align: center;font-size: 0.8em;">11 de novembro de 2024</p>
 				</div>
 
 				</section>
@@ -96,100 +96,7 @@
 
 
 
-	<section>
-
-		<div class="slide-title">
-			<h2>Objetivo principal </h2>
-		</div>
-		<div class=""> 
-
-			Aprender propriedades que os sinais obedecem quando passam por uma classe especial de sistemas:<br> 
-			<P class="lightup">
-			Sistemas Lineares e Invariantes no Tempo (SLIT), causais, determinístico e não-caóticos.
-			
-		</P>
-		<img src="../../images/sistema.png" width="650">
-		</div>
-
-		
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta ao Impulso de SLIT</h2>
-		</div>
-		
-		<div class=""> 
-<p class="lightup">
-			$$
-			g(t)=G\{\delta(t)\}
-			$$
-		</p>
-
-		<img src="../../images/sistema_impulso.png" width="500">
-		<p>
-	A resposta ao impulso é suficiente para caracterizar completamente um SLIT!
-</p>
-		</div>
-
-		
-	</section>
-
-
 	
-	<section>
-
-		<div class="slide-title">
-			<h2>Causalidade de SLIT</h2>
-		</div>
-		
-		<div class=""> 
-			<p class="lightup">
-				Um SLIT é causal se 
-				$$
-				g(t)=0, \quad t< 0.
-				$$
-			</p>
-			<center>
-<img src="../../images/resposta_ao_impulso.png" width="700">
-</center>
-		</div>
-
-		
-	</section>
-
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>BIBO Estabilidade</h2>
-		</div>
-		
-		<div class=""> 
-			<p class="lightup2">
-				Um SLIT é BIBO-Estável se, e somente se, a resposta ao impulso for absolutamente integrável:
-				$$
-							\int_{-\infty}^\infty |h(\tau)|d\tau < \infty 
-				$$
-				
-		</p>
-		<center><img src="../../images/BIBO_estabilidade.png" width="600"></center>
-		
-
-		</div>
-
-		
-	</section>
-
-
-
-
-
 	<section>
 
 		<div class="slide-title">
@@ -198,1697 +105,14 @@
 		<div class="slide-content">
 			<p>Os objetivos dessa aula são entender:
 					<ul>
-					<li>Limitação da Transformada de Fourier;</li>
-					<li>Transformada de Laplace;</li> 
-					<li>Plano-s;</li>
-					<li>Região de Convergência (ROC) no plano-s;</li>
-					<li>Interpretação da Transformada de Laplace;</li>
+					<li>Resposta temporais de SLIT;</li>
+					<li>Estabilidade;</li>
+					<li>Teorema do valor final e inicial;</li>
 					<li>Exemplos</li>
 				</p>
 				</div>
 
 	</section>
-
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Limitação da Transformada de Fourier</h2>
-		</div>
-		
-		<div class=""> 
-			<p class="">
-				<img src="../../images/sinal_oscilatorio_decrescente.png" width="900">
-		</p>
-		
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Limitação da Transformada de Fourier</h2>
-		</div>
-		
-		<div class=""> 
-			<p class="">
-				<img src="../../images/sinal_oscilatorio_crescente.png" width="900">
-		</p>
-		
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Fourier Modificada</h2>
-		</div>
-		
-		<div class=""> 
-			<p class="lightup">
-			$
-			\mathcal{F}\{y(t)\} \to \mathcal{F}\{y(t)e^{-\sigma t}\}
-			$
-		</p>
-
-		<center><img src="../../images/truque_laplace.png" width="750"></center>
-		
-
-		</div>
-
-		
-	</section>
-
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Fourier Modificada</h2>
-		</div>
-		
-		<div class=""> 
-			<p class="lightup">
-			$
-			\mathcal{F}\{y(t)\} \to \mathcal{F}\{y(t)e^{-\sigma t}\}
-			$
-		</p>
-
-		<center><img src="../../images/truque_laplace2.png" width="750"></center>
-		
-
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Laplace</h2>
-		</div>
-		
-		<div class=""> 
-			<p class="lightup">
-			$
-			\mathcal{L}\{y(t)\}=\mathcal{F}\{y(t)e^{-\sigma t}\}
-			$
-		</p>
-
-		<center>
-<img src="../../images/pieree_laplace.jpg" width="300">
-<p>Pierre Simon Laplace (1749-1827) </p>
-		</center>
-		
-
-		</div>
-
-		
-	</section>
-
-
-		
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Laplace</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center>
-$$
-\mathcal{L}\{y(t)\}=\int_{-\infty}^\infty y(t)e^{-\sigma t}e^{-j\omega t}dt\\
-= \int_{-\infty}^\infty y(t)e^{-(\sigma +j\omega) t}dt
-$$
-		</center>
-		
-		<p class="lightup">
-			Variável s:
-$$
-s=\sigma+j\omega 
-$$
-		</p>
-
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Laplace</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$$
-\mathcal{L}\{y(t)\}=\int_{-\infty}^\infty y(t)e^{-s t}dt = Y(s)
-$$
-		</center>
-	
-<p>Comparativo:</p>
-<ul>
-	<li>Transformada de Fourier: $Y(\omega)$ com $\omega \in \mathbb{R}$;</li>
-	<li>Transformada de Laplace: $Y(s)$ com $s \in \mathbb{C}$;</li>
-</ul>
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Plano-s</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{y(t)\}=Y(s),\quad s=\sigma+j\omega
-$
-		</center>
-
-		<img src="../../images/plano_s.png" width="500">
-
-		</div>
-
-		
-	</section>
-	
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Fourier como caso particular</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{F}\{y(t)\}=\mathcal{L}\{y(t)\}\Bigr|_{\sigma=0}
-$
-		</center>
-
-		<img src="../../images/plano_s_fourier.png" width="500">
-
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Laplace como caso geral</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{y(t)\}=Y(s), \quad s\in\mathbb{C}
-$
-		</center>
-
-		<img src="../../images/plano_s_laplace.png" width="500">
-
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at}u(t)\}=?
-$
-		</center>
-
-		<img src="../../images/sinal_exponencial_crescente.png" width="700">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at}u(t)\}=\frac{1}{s-a},\quad \mathcal{R}\{s\}>a
-$
-		</center>
-
-		<img src="../../images/plano_s_ROC.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at}u(t)\}=\frac{1}{s-a},\quad \mathcal{R}\{s\}>a
-$
-		</center>
-
-		<img src="../../images/laplace_transf.gif" width="600">
-
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at}u(t)\}=\frac{1}{s-a},\quad \mathcal{R}\{s\}>a
-$
-		</center>
-
-		<img src="../../images/sinal_exponencial_crescente_truque_laplace.png" width="650">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at}u(t)\}=\frac{1}{s-a},\quad \mathcal{R}\{s\}>a
-$
-		</center>
-
-		<img src="../../images/sinal_exponencial_crescente_truque_laplace2.png" width="650">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at}u(t)\}=\frac{1}{s-a},\quad \mathcal{R}\{s\}=a
-$
-		</center>
-
-		<img src="../../images/sinal_exponencial_crescente_truque_laplace3.png" width="650">
-
-		</div>
-
-		
-	</section>
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at}u(t)\}=\frac{1}{s-a},\quad \mathcal{R}\{s\}=a 
-$
-		</center>
-
-		<img src="../../images/sinal_exponencial_crescente_truque_laplace4.png" width="650">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-ROC:\mathcal{R}\{s\}>a
-$
-		</center>
-
-		<img src="../../images/plano_s_ROC.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-		
-	
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo 2</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{-at}u(-t)\}=?
-$
-		</center>
-
-		<img src="../../images/sinal_exponencial_crescente_leftsided.png" width="650">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo 2</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{-at}u(-t)\}=-\frac{1}{s+a},\quad \mathcal{R}\{s\}<-a
-$
-		</center>
-
-		<img src="../../images/plano_s_ROC_leftsided.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo 2</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{-at}u(-t)\}=-\frac{1}{s+a},\quad \mathcal{R}\{s\}<-a
-$
-		</center>
-
-		<img src="../../images/laplace_transf2.gif" width="600">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC</h2>
-		</div>
-		
-		<div class=""> 
-
-		<img src="../../images/plano_s_ROC_leftsided_rightsided.png" width="800">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup2">
-			Sinais do lado direito (right-sided):
-Se $\sigma = \sigma_0$ converge então qualquer $\sigma >\sigma_0$ também converge.
-
-		</center>
-
-		<img src="../../images/plano_s_ROC.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup2">
-			Sinais do lado esquerdo (left-sided):
-Se $\sigma = \sigma_0$ converge então qualquer $\sigma <\sigma_0$ também converge.
-
-		</center>
-
-		<img src="../../images/plano_s_ROC_leftsided.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo 3</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{-at}u(t)\}=?
-$
-		</center>
-
-		<img src="../../images/sinal_exponencial_decrescente.png" width="650">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo 3</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{-at}u(t)\}=\frac{1}{s+a},\quad \mathcal{Re}\{s\}>-a
-$
-		</center>
-
-		<img src="../../images/plano_s_ROC_exp_desc.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo 3</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{-at}u(t)\}=\frac{1}{s+a},\quad \mathcal{Re}\{s\}>-a
-$
-		</center>
-
-		<img src="../../images/laplace_transf3.gif" width="600">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Importância da ROC</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{-e^{-at}u(-t)\}=\frac{1}{s+a},\quad \mathcal{Re}\{s\}<-a
-$
-		</center>
-
-		<img src="../../images/plano_s_ROC_leftsided.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Importância da ROC</h2>
-		</div>
-		
-		<div class=""> 
-Os sinais 
-		<center class="lightup">
-$
-y_1(t)=e^{-at}u(t)
-$
-		</center>
-		e 
-		<center class="lightup">
-			$
-			y_2(t)=-e^{-at}u(-t)
-			$
-					</center>	
-
-	possuem a mesma Transformada de Laplace 
-		$
-		\frac{1}{s+a}
-		$.
-
-Porém, com ROC diferentes!
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-		
-Se $g(t) = g_1(t)+g_2(t)+\cdots+g_n(t)$ então ROC é $$\Gamma_1\cap\Gamma_2\cap \cdots \cap \Gamma_n$$
-em que $\Gamma_i$ é  ROC de $g_i(t)$.
-		</center>
-
-		Exemplo:
-		$$
-		g(t)=e^{-at}u(t)+e^{-bt}u(-t)
-		$$
-	
-
-		</div>
-
-		
-	</section>
-
-	
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup2">
-		$$\{\mathcal{Re}\{s\}>-a\}\cap \{\mathcal{Re}\{s\} < -b\}$$
-		</center>
-<img src="../../images/plano_s_ROC_intersec.png" width="500">
-		
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-		$$\{\mathcal{Re}\{s\}>-a\}\cap \{\mathcal{Re}\{s\} < -b\}$$
-		</center>
-Note que 
-$$
-		g(t)=e^{-at}u(t)+e^{-bt}u(-t)
-		$$
-
-		admite Transformada de Laplace apenas se $-a<-b$!
-		
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Generalidade da Transformada de Laplace</h2>
-		</div>
-		
-		<div class=""> 
-			<p>&nbsp;</p>
-
-		<center class="lightup">
-		
-Um sinal pode ter Transformada de Laplace mas não ter Transformada de Fourier!
-
-		</center>
-
-		Exemplo:
-		$$
-		y(t)=e^{at}u(t)
-		$$
-	
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Não possui Transformada de Fourier</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at}u(t)\}=\frac{1}{s-a},\quad \mathcal{R}\{s\}>a
-$
-		</center>
-
-		<img src="../../images/plano_s_ROC.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC: Estabilidade</h2>
-		</div>
-		
-		<div class=""> 
-			<p>&nbsp;</p>
-
-		<center class="lightup">
-		
-A região de convergência da Transformada de Laplace precisa conter o eixo imaginário $j\omega$ para representar um sinal estável.
-
-		</center>
-
-		Exemplo:
-
-		$$
-		y(t)=e^{-at}u(t), \quad a>0
-		$$
-	
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Possui Transformada de Fourier</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{-at}u(t)\}=\frac{1}{s+a},\quad \mathcal{R}\{s\}>-a
-$
-		</center>
-
-		<img src="../../images/plano_s_ROC_exp_desc.png" width="550">
-
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC: Causalidade</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-		
-A resposta ao impulso precisa ser "right-sided" para ser causal.
-
-		</center>
-
-		Exemplo:
-
-		$$
-		g(t)=e^{-at}u(t), \quad a>0
-		$$
-		e 
-		$$
-		g(t)=e^{at}u(-t), \quad a>0
-		$$
-
-	
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>ROC: Causalidade</h2>
-		</div>
-		
-		<div class=""> 
-
-		<img src="../../images/plano_s_ROC_leftsided_rightsided_exp_desc.png" width="800">
-
-		</div>
-
-		
-	</section>
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada Inversa de Laplace</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}^{-1}\{Y(s)\}=?
-$
-		</center>
-Note que
-		$$
-		Y(\sigma+j\omega)=\mathcal{F}\{y(t)e^{-\sigma t}\}
-		$$
-		Portanto,
-		$$
-		y(t)e^{-\sigma t}=\frac{1}{2\pi }\int_{-\infty}^\infty Y(\sigma+j\omega)e^{j\omega t}d\omega
-		$$
-
-		</div>
-
-		
-	</section>
-
-
-		
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada Inversa de Laplace</h2>
-		</div>
-		
-		<div class=""> 
-
-		Tomando a variável s, tem-se
-		<p class="">
-		$$
-			s=\sigma+j\omega \Rightarrow ds = jd\omega 
-		$$
-	</p>
-Logo,
-<p class="lightup">
-		
-		$$
-		y(t)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty} Y(s)e^{s t}ds
-		$$
-</p>
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Par Transformada de Laplace</h2>
-		</div>
-		
-		<div class=""> 
-
-	<p class="lightup">
-		$
-			y(t)\Longleftrightarrow Y(s)
-		$
-	</p>
-Em que,
-<p class="lightup">
-		
-	$$
-	Y(s)=\int_{-\infty}^{\infty} y(t)e^{-s t}dt\\
-		y(t)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty} Y(s)e^{s t}ds
-		$$
-</p>
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de Laplace vs Fourier</h2>
-		</div>
-		
-		<div class=""> 
-
-			<p class="">
-				Fourier:
-		<p class="lightup2">
-				$$
-				y(t)=\frac{1}{2\pi }\int_{-\infty}^{\infty} Y(\omega)e^{j\omega t}d\omega, \quad \omega \in\mathbb{R}
-				$$
-			</p>
-		</p>
-<p class="">
-		Laplace:
-		<p class="lightup2">
-		$$
-		y(t)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty} Y(s)e^{s t}ds, \quad s\in\mathbb{C}
-		$$</p>
-</p>
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de Laplace vs Fourier</h2>
-		</div>
-		
-		<div class=""> 
-
-			<p class="">
-				Fourier:
-		<p class="lightup2">
-				$$
-				\{e^{j\omega t}=cos(\omega t)+j\sin(\omega t),\quad \omega \in \mathbb{R}\}
-				$$
-			</p>
-		</p>
-<p class="">
-		Laplace:
-		<p class="lightup2">
-			$$
-			\{e^{(\sigma+j\omega) t}=e^{\sigma t}(cos(\omega t)+j\sin(\omega t)),\quad \sigma, \omega \in \mathbb{R}\}
-			$$
-		</p>
-</p>
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de Laplace</h2>
-		</div>
-		<div>
-			<img src="../../images/plano_s_ROC_exp_desc_sigma1.png" width="700">
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de Laplace</h2>
-		</div>
-		<div>
-			<img src="../../images/plano_s_ROC_exp_desc_sigma2.png" width="700">
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de Laplace</h2>
-		</div>
-		<div>
-			<img src="../../images/laplace_transf_sigmas.gif" width="700">
-		</div>
-
-		
-	</section>
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de Laplace</h2>
-		</div>
-		<div>
-			<img src="../../images/laplace_transf_sigmas2.gif" width="700">
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de Laplace</h2>
-		</div>
-		<div>
-			<img src="../../images/laplace_transf_sigmas3.gif" width="700">
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplos</h2>
-		</div>
-		
-		<div class=""> 
-
-	<p class="">
-		$
-			\delta(t) \Longleftrightarrow 1,\quad s\in\mathbb{C}
-		$
-	</p>
-
-<p class="">
-		
-	$
-	u(t) \Longleftrightarrow \frac{1}{s},\quad \mathcal{Re}\{s\}>0
-		$
-</p>
-
-<p class="">
-		
-	$
-	e^{-a t}u(t) \Longleftrightarrow \frac{1}{s+a},\quad \mathcal{Re}\{s\}>-a
-		$
-</p>
-
-
-<p class="">
-		
-	$
-	\sin(\omega_0 t)u(t) \Longleftrightarrow \frac{\omega_0}{s^2+\omega_0^2},\quad \mathcal{Re}\{s\}>0
-		$
-</p>
-
-
-<p class="">
-		
-	$
-	\cos(\omega_0 t)u(t) \Longleftrightarrow \frac{s}{s^2+\omega_0^2},\quad \mathcal{Re}\{s\}>0
-		$
-</p>
-<p class="">
-		
-	$
-	e^{-at}\sin(\omega_0 t)u(t) \Longleftrightarrow \frac{\omega_0}{(s+a)^2+\omega_0^2}
-		$
-</p>
-
-
-<p class="">
-		
-	$
-	e^{-at}\cos(\omega_0 t)u(t) \Longleftrightarrow \frac{s+a}{(s+a)^2+\omega_0^2}
-		$
-</p>
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Limitação da Transformada de Laplace</h2>
-		</div>
-		
-		<div class=""> 
-
-		<center class="lightup">
-$
-\mathcal{L}\{e^{at^2}u(t)\}=?
-$
-		</center>
-
-Apenas sinais que crescem numa taxa no máximo exponencial admitem Transformada de Laplace.
-Portanto, para um sinal $y(t)$ possuir transformada de Laplace deve existir $\sigma_0\in\mathbb{R}$ e $M>0$ tal que:
-<p class="lightup">
-$$
-		|y(t)|\le M e^{\sigma_0 t}
-
-$$
-</p>
-
-		</div>
-
-		
-	</section>
-
-
-	
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Laplace</h2>
-		</div>
-		<div class="slide-content">
-		Seja um sinal $g:\mathbb{R}\to\mathbb{C}$.
-		<p>&nbsp;</p>
-	<center class="lightup">
-		Bilateral:
-		$$ 
-		G(s)=\int_{-\infty}^\infty g(t)e^{-st}dt
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Transformada de Laplace</h2>
-		</div>
-		<div class="slide-content">
-		Seja $g:\mathbb{R}^+\to\mathbb{C}$ a resposta ao impulso de um sistema LIT (causal).
- <p>&nbsp;</p>
-	<center class="lightup">
-		Unilateral:
-		$$ 
-		G(s)=\int_{0}^\infty g(t)e^{-st}dt
-		$$
-	</center>
-
-<center>Para análise de sistemas causais utiliza-se a Transformada de Laplace unilateral!</center>
-
-	
-			   </div>
-
-	</section>
-
-
-
-	
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade da Linearidade </h2>
-		</div>
-		<div class="slide-content">
-		Considere dois sinais $g:\mathbb{R}\to\mathbb{C}$ e $h:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s), \quad h(t) \Longleftrightarrow H(s)
-		$$
-		então
-		$$
-		\alpha g(t)+\beta h(t) \Longleftrightarrow \alpha G(s)+\beta H(s)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Deslocamento no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s)
-		$$
-		então
-		$$
-		g(t-t_0) \Longleftrightarrow e^{-s t_0}G(s)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Deslocamento na frequência </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s)
-		$$
-		então
-		$$
-		e^{s_0 t}g(t) \Longleftrightarrow G(s-s_0)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: <i>Scaling</i></h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s)
-		$$
-		então
-		$$
-		g(at) \Longleftrightarrow \frac{1}{|a|}G(\frac{s}{a})
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Inversão no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s)
-		$$
-		então
-		$$
-		g(-t) \Longleftrightarrow G(-s)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Convolução no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere dois sinais $g:\mathbb{R}\to\mathbb{C}$ e $h:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s),\quad h(t)\Longleftrightarrow H(s)
-		$$
-		então
-		$$
-		g(t)\ast h(t) \Longleftrightarrow G(s)H(s)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Produto no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere dois sinais $g:\mathbb{R}\to\mathbb{C}$ e $h:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s),\quad h(t)\Longleftrightarrow H(s)
-		$$
-		então
-		$$
-		g(t)h(t) \Longleftrightarrow \frac{1}{2\pi j}G(s)\ast H(s)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-	
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Nível DC </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s)
-		$$
-		então
-		$$
-		g_\text{DC}=G(0)=\int_{-\infty}^\infty g(t)dt
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Instante Zero </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s)
-		$$
-		então
-		$$
-		g(0)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty} G(s)ds
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Diferenciação no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s) (\text{bilateral})
-		$$
-		então
-		$$
-		\frac{dg}{dt}\Longleftrightarrow s G(s)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Diferenciação no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s) (\text{unilateral})
-		$$
-		então
-		$$
-		\frac{dg}{dt}\Longleftrightarrow s G(s)-g(0)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Diferenciação no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s) (\text{bilateral})
-		$$
-		então
-		$$
-		\frac{d^ng}{dt^n}\Longleftrightarrow s^n G(s)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Diferenciação no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s) (\text{unilateral})
-		$$
-		então
-		$$
-		\frac{d^ng}{dt^n}\Longleftrightarrow s^n G(s)-\sum_{k=1}^n s^{n-k}g^{(k-1)}(0)
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Integração no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s)
-		$$
-		então
-		$$
-		\int_{-\infty}^t g(\tau)d\tau \Longleftrightarrow \quad \frac{G(s)}{s}+\frac{\int_{-\infty}^{0^{-}}x(\tau)d\tau}{s}
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Propriedade: Integração no tempo </h2>
-		</div>
-		<div class="slide-content">
-		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
- 
-	<center class="lightup">
-		Se 
-		$$ 
-		g(t) \Longleftrightarrow G(s)
-		$$
-		então
-		$$
-		\int_{0}^t g(\tau)d\tau \Longleftrightarrow \quad \frac{G(s)}{s}
-		$$
-	</center>
-
-
-	
-			   </div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-			<img src="../../images/sistema.png" width="650">
-			<p class="lightup">
-				EDO Lineares:
-		$$
-			\frac{d^n y}{dt^n}+\cdots+a_{n-1}\frac{dy}{dt}+a_ny=\frac{d^m x}{dt^m}+\cdots+b_{m-1}\frac{dx}{dt}+b_mx
-		$$
-	</p>
-		</div>
-
-		
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-			<img src="../../images/sistema.png" width="650">
-			<p class="lightup">
-				EDO Lineares: (C.I.N.)<br>
-		$$
-			\mathcal{L}\{\frac{d^n y}{dt^n}+\cdots+a_{n-1}\frac{dy}{dt}+a_ny\}=\\\mathcal{L}\{\frac{d^m x}{dt^m}+\cdots+b_{m-1}\frac{dx}{dt}+b_mx\}
-		$$
-	</p>
-		</div>
-
-		
-	</section>
-
 
 
 	
@@ -1914,25 +138,6 @@ $$
 	</section>
 
 
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<p>&nbsp;</p>
-			<p class="lightup">
-				Equação Algébrica no plano-s:
-		$$
-			Y(s)=G(s)X(s)
-		$$
-		<center>Representação na frequência complexa $s$!</center>
-	</p>
-		</div>
-
-		
-	</section>
 
 
 	
@@ -1978,6 +183,64 @@ $$
 
 		
 	</section>
+
+
+
+	
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Causalidade de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+				O sistema é causal se 
+				$$
+				m\le n
+				$$
+
+			</p>
+			
+			<p class="lightup">
+			$$
+			G(s)=\frac{s^m+\cdots+b_{m-1}s+ b_m}{s^n+\cdots+a_{n-1}s+a_n}
+			$$
+		</p>
+		</center>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Causalidade de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+				Exemplo:
+				$$
+				G(s)=\frac{s^2}{s+1}
+				$$
+			</p>
+			Não causal, pois 
+			$$
+			G(s)=(s-1)+\frac{1}{s+1}
+			$$
+		</center>
+		</div>
+
+		
+	</section>
+
 
 
 
@@ -2077,6 +340,30 @@ $$
 			<p>&nbsp;</p>
 			<img src="../../images/sistema_plano_s.png" width="600">
 			<p class="lightup">
+				Coeficientes da expansão (pólos distintos):
+			$$
+			a_i=\Bigl(G(s)(s-p_i)\Bigr)\Bigr|_{s=p_i}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
 				Resposta temporal (pólos distintos):
 			$$
 			g(t)=(a_1e^{p_1 t}+a_2e^{p_2t}+\cdots+a_ne^{p_n t})u(t)
@@ -2086,6 +373,928 @@ $$
 		</div>
 
 	</section>
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			SLIT:
+			$$
+			\frac{d^3y}{dt^3}+6\frac{d^2y}{dt^2}+11\frac{dy}{dt}+6y=x
+			$$
+		</p>
+		<ul>
+			<li>Função de transferência?</li>
+			<li>Resposta ao impulso?</li>
+		</ul>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Função de Transferência:
+			$$
+			G(s)=\frac{1}{(s+1)(s+2)(s+3)}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+				Expansão em frações parciais (pólos distintos):
+			$$
+			G(s)=\frac{a_1}{s+1}+\frac{a_2}{s+2}+\frac{a_3}{s+3}
+			$$
+		</p>
+			então,
+			<p class="lightup">
+				Resposta temporal (pólos distintos):
+			$$
+			g(t)=(a_1e^{-t}+a_2e^{-2t}+a_3e^{-3t})u(t)
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+		<img src="../../images/exponenciais_decrescente.png" alt="">
+		$$
+			g(t)=(\frac{1}{2}e^{-t}-e^{-2t}+\frac{1}{2}e^{-3t})u(t)
+		$$
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			SLIT:
+			$$
+			G(s)=\frac{1}{(s+2)^3(s+3)}
+			$$
+		</p>
+		<ul>
+			<li>Resposta ao impulso?</li>
+		</ul>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			Expansão em frações parciais:
+			$$
+			G(s)=\frac{a_{11}}{s+2}+\frac{a_{12}}{(s+2)^2}+\frac{a_{13}}{(s+2)^3}+\frac{a_{2}}{s+3}
+			$$
+		</p>
+		então,
+		<p class="lightup">
+			$$
+			g(t)=(a_{11}e^{-2t}+a_{12}te^{-2t}+\frac{1}{2}a_{13}t^2e^{-2t}+a_2e^{-3t})u(t)
+			$$
+		</p>
+	
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/exponenciais_decrescente2.png" alt="">
+			$$
+			g(t)=(e^{-2t}-te^{-2t}+\frac{1}{2}t^2e^{-2t}-e^{-3t})u(t)
+			$$
+	
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Pólos com multiplicidade:
+			$$
+			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)\to\text{zeros}}{(s-p_1)^d(s-p_2)\cdots(s-p_{n-d+1})\to\text{pólos}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	
+	
+
+
+	
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos com multiplicidade):
+			$$
+			G(s)=\frac{a_{11}}{(s-p_1)}+\frac{a_{12}}{(s-p_1)^2}+\cdots+\frac{a_{1d}}{(s-p_1)^d}\\+\frac{a_2}{s-p_2}+\cdots+\frac{a_{n-p+1}}{s-p_{n-d+1}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Coeficientes da expansão (pólos com multiplicidade):
+			$$
+			a_{ij}=\frac{1}{(d-j)!}\frac{d^{d-j}}{ds^{d-j}}\Bigl(G(s)(s-p_i)^d\Bigr)\Bigr|_{s=p_i}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Propriedade:
+			$$
+			t^ne^{\lambda t}u(t) \Longleftrightarrow \frac{n!}{(s-\lambda)^{n+1}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos com multiplicidade):
+			$$
+			g(t)=(a_{11}e^{p_1 t}+a_{12}te^{p_1t}+\cdots+\frac{a_{1d}}{(d-1)!}t^{d-1}e^{p_1 t}\\+a_2e^{p_2t}+\cdots+a_ne^{p_n t})u(t)
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos conjugados):
+			$$
+			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)\to\text{zeros}}{(s-(a+jb))(s-(a-jb))\cdots(s-p_{n-1})\to\text{pólos}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Pólos complexos</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+				Pólos complexos sempre aparecem na forma de pares conjugados para SLIT.
+		</p>
+		<img src="../../images/estabilidade_continuo.png" width="350">
+		</center>
+		</div>
+
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Pólos complexos</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+				Pólos complexos sempre aparecem na forma de pares conjugados para SLIT.
+		</p>
+		Note que para funções de transferências, tem-se
+		$$
+		G(s)^*=G(s^*)
+		$$
+		Exemplo:
+		$$
+		G(s)=\frac{s+1}{s^2+s+1}
+		$$
+		</center>
+		</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Pólos complexos</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			Pólos complexos sempre aparecem na forma de pares conjugados para SLIT.
+		</p>
+		Note que para funções de transferências, tem-se
+		$$
+		G(s)^*=\frac{N(s)^*}{D(s)^*}=\frac{N(s^*)}{D(s^*)}=G(s^*)
+		$$
+		Logo, para todos os pólos do SLIT, deve ser válido:
+		$$
+		D(p)=0 \Rightarrow D(p^*)=0
+		$$
+		</center>
+		</div>
+
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos conjugados):
+			$$
+			G(s)=\frac{a_1}{s-(a+jb)}+\frac{a_2}{s-(a-jb)}+\cdots+\frac{a_{n-1}}{s-p_{n-1}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos conjugados):
+			$$
+			G(s)=\frac{a_1}{s-(a+jb)}+\frac{a_1^*}{s-(a-jb)}+\cdots+\frac{a_{n-1}}{s-p_{n-1}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+					<p class="lightup">
+				Resposta temporal (pólos conjugados):
+			$$
+			g(t)=(a_1e^{(a+jb) t}+a_1^*e^{(a-jb)t}+\cdots+a_{n-1}e^{p_{n-1} t})u(t)
+			$$
+		</p>
+		<ul>
+			<li>Coeficientes podem ser complexos;</li>
+			<li>Resposta temporal envolve exponenciais complexas;</li>
+		</ul>
+		</center>
+		</div>
+
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos conjugados):
+			$$
+			G(s)=\frac{a_1s+a_2}{(s-a)^2+b^2}+\cdots+\frac{a_{n-2}}{s-p_{n-2}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Coeficientes dos pólos conjugados</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			
+			<p class="lightup2">
+						$$
+			G(s)=\frac{N(s)}{D(s)} \Rightarrow N(s)=G(s)D(s)
+			$$
+		</p>
+		Assim, multiplicando a função de transferência pelo denominador é possível obter os valores de $a_1$ e $a_2$ por inspeção dos termos de mesma ordem.
+	
+		</center>
+		</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Pares transformadas de Laplace:</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+
+			<p class="lightup">
+				
+			$$
+			e^{at}\sin(bt)u(t) \Longleftrightarrow \frac{b}{(s-a)^2+b^2}
+			$$
+		</p>
+		<p class="lightup">
+				
+			$$
+			e^{at}\cos(bt)u(t) \Longleftrightarrow \frac{s-a}{(s-a)^2+b^2}\\
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Resposta temporal (pólos conjugados):
+			$$
+			g(t)=(e^{at}(a_1\cos(bt)+\frac{a_2-a_1a}{b}\sin(b t))+\\\cdots+a_{n-2}e^{p_{n-2} t})u(t)
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+
+
+
+
+	
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			SLIT:
+			$$
+			G(s)=\frac{(s+1)}{(s+2+j)(s+2-j)(s+3)}
+			$$
+		</p>
+		<ul>
+			<li>Resposta ao impulso?</li>
+		</ul>
+		</center>
+		</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			Expansão em frações parciais:
+			$$
+			G(s)=\frac{a_1}{s-(-2-j)}+\frac{a_1^*}{s-(-2+j)}+\frac{a_3}{s+3}
+			$$
+		</p>
+		<ul>
+			<li>Resposta ao impulso?</li>
+		</ul>
+		<p class="lightup">
+			
+			$$
+			g(t)=(a_1e^{(-2-j)t}+a_1^*e^{(-2+j)t}+a_3e^{-3t})u(t)
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			Expansão em frações parciais:
+			$$
+			G(s)=\frac{a_1s+a_2}{(s-(-2-j))(s-(-2+j))}+\frac{a_3}{s+3}
+			$$
+		</p>
+		<ul>
+			<li>Resposta ao impulso?</li>
+		</ul>
+	
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			Expansão em frações parciais:
+			$$
+			G(s)=\frac{a_1s+a_2}{(s+2)^2+1}+\frac{a_3}{s+3}
+			$$
+		</p>
+		<ul>
+			<li>Resposta ao impulso?</li>
+		</ul>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			Expansão em frações parciais:
+			$$
+			G(s)=\frac{a_1s+a_2}{(s+2)^2+1}+\frac{a_3}{s+3}
+			$$
+		</p>
+		então,
+		<p class="lightup">
+			
+		$$
+		g(t)=(e^{-2t}(a_1\cos(t)+(a_2-2a_1)\sin(t))+a_3e^{-3t})u(t)
+		$$
+	</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+<img src="../../images/exponenciais_decrescente3.png" alt="">
+
+
+		$$
+		g(t)=(e^{-2t}\cos(t)-e^{-3t})u(t)
+		$$
+
+		</center>
+		</div>
+
+	</section>
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Estabilidade de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/estabilidade_continuo.png" width="350">
+			<p class="lightup2">
+			$$
+			\mathcal{Real}\{pólos\}< 0
+			$$
+		</p>
+		</center>
+		</div>
+
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta temporal</h2>
+		</div>
+		
+		<div class=""> 
+			<center>
+			<p class="lightup">
+		$$
+			Y(s)=G(s)X(s)
+		$$
+	</p>
+	então,
+	<p class="lightup">
+		$$
+			y(t)=\mathcal{L}^{-1}\{G(s)X(s)\}=g(t)\ast x(t)
+		$$
+	</p>
+	</center>
+	
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+			<center>
+			<p class="lightup">
+		$$
+			G(s)=\frac{s+1}{(s+2)(s+3)}
+		$$
+	</p>
+	Qual a resposta temporal do sistema para um entrada em degrau unitário?
+	<p class="lightup">
+		$$
+			y(t)=\mathcal{L}^{-1}\{G(s)X(s)\}, \quad X(s)=\frac{1}{s}
+		$$
+	</p>
+	</center>
+	
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+			<center>
+			<p class="lightup">
+		$$
+			G(s)=\frac{s+1}{(s+2)(s+3)}
+		$$
+	</p>
+	Qual a resposta temporal do sistema para um entrada em degrau unitário?
+	<p class="lightup">
+		$$
+			Y(s)=\frac{(s+1)}{s(s+2)(s+3)}=\frac{a_1}{s}+\frac{a_2}{s+2}+\frac{a_3}{s+3}
+		$$
+	</p>
+	</center>
+	
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+			<center>
+			<p class="lightup">
+		$$
+			G(s)=\frac{s+1}{(s+2)(s+3)}
+		$$
+	</p>
+	Qual a resposta temporal do sistema para um entrada em degrau unitário?
+	<p class="lightup">
+		$$
+			y(t)=(a_1+a_2e^{-2t}+a_3e^{-3t})u(t)
+		$$
+	</p>
+	</center>
+	
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta temporal de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				
+			$$
+			g(t)=(A+Be^{-\lambda t}+e^{-\alpha t}(C\sin(\omega_n t)+D\cos(\omega_n t))u(t)
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Teorema do Valor Final</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+			$$
+			\lim_{t\to\infty}y(t)=\lim_{s\to 0} s Y(s)
+			$$
+		</p>
+		obs: $\mathcal{Real}\{pólos(sY(s))\} < 0$.
+		</center>
+		</div>
+
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Teorema do Valor Inicial</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+			$$
+			\lim_{t\to 0}y(t)=\lim_{s\to \infty} s Y(s)
+			$$
+		</p>
+		obs: $Y(s)$ estritamente própria.
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			SLIT:
+			$$
+			Y(s)=\frac{10(2s+3)}{s(s^2+2s+5)}
+			$$
+		</p>
+		<ul>
+			<li>$y(0)$?</li>
+			<li>$y(\infty)$?</li>
+		</ul>
+		</center>
+		</div>
+
+	</section>
+
+
+
+
 
 	
 
