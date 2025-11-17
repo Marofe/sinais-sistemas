@@ -18,52 +18,7 @@
 		type="text/javascript"
 		src="../../reveal.js/dist/vis-graph3d.min.js"
 	  ></script>
-	  <!-- <script type="text/javascript">
-		var data = null;
-		var graph = null;
-  
-	
-		// Called when the Visualization API is loaded.
-		function drawVisualization() {
-		  // Create and populate a data table.
-		  data = new vis.DataSet();
-		  // create some nice looking data with sin/cos
-		  var counter = 0;
-		  var steps = 1000; // number of datapoints will be steps*steps
-		  var axisMax = 20;
-		  var axisStep = axisMax / steps;
-		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
-			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
-		  }
-  
-		  // specify options
-		  var options = {
-			width: "600px",
-			height: "600px",
-			style: "line",
-			dataColor: '#ff0000',
-			showPerspective: false,
-			showGrid: true,
-			showShadow: false,
-			keepAspectRatio: false,
-			verticalRatio: 1,
-			xLabel: "t",
-			zLabel: "Imaginário",
-			yLabel: "Real",
-			showAnimationControls 	: true
-		  };
-  
-		  // Instantiate our graph object.
-		  var container = document.getElementById("mygraph");
-		  graph = new vis.Graph3d(container, data, options);
-		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
-
-
-		  var container = document.getElementById("mygraph2");
-		  graph = new vis.Graph3d(container, data, options);
-		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
-		}
-	  </script> -->
+	  
 	</head>
 	<!-- <body onload="drawVisualization();"> -->
 		<body>
@@ -75,16 +30,16 @@
 				
 				<section data-hide-slide-number="true" data-transition="slide">
 					<div class="logo"><img src="../../images/sel.png"/> </div>
-					<div class="logo2"><img src="../../images/usp.png"/> </div>
+					<div class="logo2"><img src="../../images/Logo EESC-USP_top.png"/> </div>
 					<div class="title">
-					<h2>Aula 19: <br>Representação de SLIT e Estabilidade<br>SEL0383</h2>
+					<h2>Aula 18: <br>Representação de SLIT e Estabilidade<br>SEL0383</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
 				</div>
 					<div class="advisor">
 					
-					<p style="text-align: center;font-size: 0.8em;">11 de novembro de 2024</p>
+					<p style="text-align: center;font-size: 0.8em;">17 de novembro de 2025</p>
 				</div>
 
 				</section>
@@ -266,6 +221,10 @@
 		
 	</section>
 
+
+
+	
+
 	<section>
 
 		<div class="slide-title">
@@ -287,7 +246,8 @@
 
 	</section>
 
-
+	
+	
 	<section>
 
 		<div class="slide-title">
@@ -305,12 +265,36 @@
 	</section>
 
 
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta modal de SLIT </h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="">
+			<ul>
+				<li>Pólos distintos;</li>
+				<li>Pólos com multiplicidade;</li>
+				<li>Pólos conjugados.</li>
+			</ul>
+		</p>
+		</center>
+		</div>
+
+		
+	</section>
+
+
 
 
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos Distintos em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -332,7 +316,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos Distintos em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -356,7 +340,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT</h2>
+			<h2>Pólos Distintos em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -468,7 +452,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Exemplo</h2>
+			<h2>Exemplo: pólos com multiplicidade</h2>
 		</div>
 		
 		<div class=""> 
@@ -486,6 +470,34 @@
 		</div>
 
 	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p class="lightup">
+			Expansão em frações parciais:
+			$$
+			G(s)=\frac{a_{11}}{s+2}+\frac{a_{12}}{(s+2)^2}+\frac{a_{13}}{(s+2)^3}+\frac{a_{2}}{s+3}
+			$$
+		</p>
+		Note que
+		<p class="lightup">
+			$$
+			t^ne^{at}u(t) \Longleftrightarrow \frac{n!}{(s-a)^{n+1}}
+			$$
+		</p>
+	
+		</center>
+		</div>
+
+	</section>
+
 
 
 	<section>
@@ -537,7 +549,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos com multiplicidade em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -566,7 +578,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos com multiplicidade em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -588,7 +600,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos com multiplicidade em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -609,7 +621,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos com multiplicidade em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -618,7 +630,7 @@
 			<p class="lightup">
 				Propriedade:
 			$$
-			t^ne^{\lambda t}u(t) \Longleftrightarrow \frac{n!}{(s-\lambda)^{n+1}}
+			t^ne^{a t}u(t) \Longleftrightarrow \frac{n!}{(s-a)^{n+1}}
 			$$
 		</p>
 		</center>
@@ -631,7 +643,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos com multiplicidade em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -656,7 +668,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos conjugados em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -746,10 +758,10 @@
 
 
 	
-	<section>
+	<!-- <section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos conjugados em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -765,13 +777,13 @@
 		</center>
 		</div>
 
-	</section>
+	</section> -->
 
 
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Pólos conjugados em SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -1071,12 +1083,36 @@
 	</section>
 
 
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta temporal de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				
+			$$
+			g(t)=\Bigl(A+\sum_{i=0}^dB_it^ie^{\lambda t}+e^{\alpha t}(C\sin(\omega_n t)+D\cos(\omega_n t)\Bigr)u(t)
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
 
 
 	<section>
 
 		<div class="slide-title">
-			<h2>Estabilidade de SLIT</h2>
+			<h2>Estabilidade Assintótica de SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -1094,10 +1130,55 @@
 	</section>
 
 
+	
 	<section>
 
 		<div class="slide-title">
-			<h2>Resposta temporal</h2>
+			<h2>Estabilidade Assintótica de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/estabilidade_continuo.png" width="350">
+			<p class="lightup">
+			
+			Todos os pólos no semiplano esquerdo (SPE) do plano-s.
+			
+		</p>
+		</center>
+		</div>
+
+
+	</section>
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo</h2>
+		</div>
+		
+		<div class=""> 
+			<center>
+			<p class="lightup">
+		$$
+			G(s)=\frac{s+1}{(s+2)(s+3)}
+		$$
+	</p>
+	Esse sistema é assintóticamente estável?
+	
+	</center>
+	
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta temporal de SLIT</h2>
 		</div>
 		
 		<div class=""> 
@@ -1110,7 +1191,7 @@
 	então,
 	<p class="lightup">
 		$$
-			y(t)=\mathcal{L}^{-1}\{G(s)X(s)\}=g(t)\ast x(t)
+			y(t)=\mathcal{L}^{-1}\{G(s)X(s)\}
 		$$
 	</p>
 	</center>
@@ -1124,7 +1205,7 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Exemplo</h2>
+			<h2>Exemplo: resposta ao degrau</h2>
 		</div>
 		
 		<div class=""> 
@@ -1202,27 +1283,6 @@
 		
 	</section>
 
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta temporal de SLIT</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p>&nbsp;</p>
-			<img src="../../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				
-			$$
-			g(t)=(A+Be^{-\lambda t}+e^{-\alpha t}(C\sin(\omega_n t)+D\cos(\omega_n t))u(t)
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
 
 
 
