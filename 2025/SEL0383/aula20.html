@@ -18,52 +18,7 @@
 		type="text/javascript"
 		src="../../reveal.js/dist/vis-graph3d.min.js"
 	  ></script>
-	  <!-- <script type="text/javascript">
-		var data = null;
-		var graph = null;
-  
-	
-		// Called when the Visualization API is loaded.
-		function drawVisualization() {
-		  // Create and populate a data table.
-		  data = new vis.DataSet();
-		  // create some nice looking data with sin/cos
-		  var counter = 0;
-		  var steps = 1000; // number of datapoints will be steps*steps
-		  var axisMax = 20;
-		  var axisStep = axisMax / steps;
-		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
-			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
-		  }
-  
-		  // specify options
-		  var options = {
-			width: "600px",
-			height: "600px",
-			style: "line",
-			dataColor: '#ff0000',
-			showPerspective: false,
-			showGrid: true,
-			showShadow: false,
-			keepAspectRatio: false,
-			verticalRatio: 1,
-			xLabel: "t",
-			zLabel: "Imaginário",
-			yLabel: "Real",
-			showAnimationControls 	: true
-		  };
-  
-		  // Instantiate our graph object.
-		  var container = document.getElementById("mygraph");
-		  graph = new vis.Graph3d(container, data, options);
-		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
-
-
-		  var container = document.getElementById("mygraph2");
-		  graph = new vis.Graph3d(container, data, options);
-		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
-		}
-	  </script> -->
+	  
 	</head>
 	<!-- <body onload="drawVisualization();"> -->
 		<body>
@@ -75,16 +30,16 @@
 				
 				<section data-hide-slide-number="true" data-transition="slide">
 					<div class="logo"><img src="../../images/sel.png"/> </div>
-					<div class="logo2"><img src="../../images/usp.png"/> </div>
+					<div class="logo2"><img src="../../images/Logo EESC-USP_top.png"/> </div>
 					<div class="title">
-					<h2>Aula 21: <br>Diagrama de Bode para SLIT<br>SEL0383</h2>
+					<h2>Aula 20: <br>Diagrama de Blocos & Espaço de Estados <br>SEL0383</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
 				</div>
 					<div class="advisor">
 					
-					<p style="text-align: center;font-size: 0.8em;">18 de novembro de 2024</p>
+					<p style="text-align: center;font-size: 0.8em;">25 de novembro de 2025</p>
 				</div>
 
 				</section>
@@ -103,10 +58,12 @@
 		<div class="slide-content">
 			<p>Os objetivos dessa aula são entender:
 					<ul>
-					<li>Componentes da função de transferência;</li>
-					<li>Dinâmica de 1° e 2° ordem;</li>
-					<li>Diagrama de Bode aproximado;</li>
-					<li>Exemplos</li>
+					<li>Associação de sistemas;</li>
+					<li>Representação de EDO usando diagrama de blocos;</li>
+					<li>Descrição Externa vs Interna de SLIT</li>
+					<li>Variáveis de estado;</li>
+					<li>Representação em espaço de estados;</li>
+					<li>Estabilidade;</li>
 				</p>
 				</div>
 
@@ -115,92 +72,135 @@
 
 	
 
+	
+
+		
 	<section>
 
 		<div class="slide-title">
-			<h2>Função de Transferência</h2>
+			<h2>Associação de SLIT</h2>
 		</div>
 		<div class="slide-content">
 		<center>
-			<img src="../../images/sistema.png" width="500">
-			<p class="lightup">
-				Forma geral:
+
+		<ul>
+			<li>Série;</li>
+			<li>Paralelo;</li>
+			<li>Realimentação.</li>
+		</ul>
+		<br>
+		<img src="../../images/sistema_serie.png" width="500"><br>
+		<img src="../../images/sistema_paralelo.png" width="500">
+		<img src="../../images/sistema_realimentacao.png" width="500">
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Associação Série</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<p>&nbsp;</p>
+		<img src="../../images/sistema_serie.png" width="750">
+		<p class="lightup">
 			$$
-			G(s)=\frac{Y(s)}{X(s)}=\frac{s^m+\cdots+b_{m-1}s+ b_m}{s^n+\cdots+a_{n-1}s+a_n}
+				G(s)=G_1(s)G_2(s)
 			$$
 		</p>
 		</center>
 				</div>
 
 	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Associação Paralelo</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+	
+		<img src="../../images/sistema_paralelo.png" width="700">
+		<p class="lightup">
+			$$
+				G(s)=G_1(s)+G_2(s)
+			$$
+		</p>
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Associação Realimentação</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+	
+		<img src="../../images/sistema_realimentacao.png" width="700">
+		<p class="lightup">
+			$$
+				G(s)=\frac{G_1(s)}{1+G_1(s)G_2(s)}
+			$$
+		</p>
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de EDO via blocos</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<p class="lightup">
+		$$
+			a\ddot{y}+b\dot{y}+cy=x
+		$$
+	</p>
+		<ul>
+			<li>Diagrama de blocos usando derivadores?</li>
+			<li>Diagrama de blocos usando integradores?</li>
+		</ul>
+		<p>obs: usar apenas blocos somadores, amplificadores, derivadores ou integradores.</p>
+		</center>
+				</div>
+
+	</section>
+
+
 
 	
 	<section>
 
 		<div class="slide-title">
-			<h2>Função de Transferência</h2>
+			<h2>Representação de Funções de Transferência via blocos</h2>
 		</div>
 		<div class="slide-content">
 		<center>
-			<img src="../../images/sistema.png" width="500">
 			<p class="lightup">
-				Forma ZPK:
-			$$
-			G(s)=K\frac{s+b}{s+a}\frac{(s+z)(s+z^*)}{(s+p)(s+p^*)}
-			$$
-		</p>
-		FT=(ganho)+(zeros/polos reais) + (zeros/polos conjugados)
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema estático</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(s)=\frac{Y(s)}{X(s)}=K
-			$$
-		</p>
-
-		
-		<img src="../../images/circuito_R.png" width="450"><br>Resistor ideal
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega)=\frac{Y(j\omega)}{X(
-				j\omega)}=K
-			$$
-		</p>
-
+		$$
+			G(s)=\frac{b_2s^2+b_1s+b_0}{s^2+a_1s+a_0}
+		$$
+	</p>
 		<ul>
-			<li>Módulo?</li>
-			<li>Fase?</li>
+			<li>Diagrama de blocos usando integradores?</li>
 		</ul>
-		
-		
 		</center>
 				</div>
 
@@ -210,1017 +210,109 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Resposta do SLIT</h2>
+			<h2>Representação de Funções de Transferência via blocos</h2>
 		</div>
-		
-		<div class=""> 
-		
+		<div class="slide-content">
 		<center>
+			<p class="lightup">
+		$$
+			G(s)=\frac{b_2+\frac{b_1}{s}+\frac{b_0}{s^2}}{1+\frac{a_1}{s}+\frac{a_0}{s^2}}
+		$$
+	</p>
+		<ul>
+			<li>Diagrama de blocos usando integradores?</li>
+		</ul>
+		</center>
+				</div>
 
-			<img src="../../images/sistema_cos2.png" width="950">
+	</section>
 
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de Funções de Transferência via blocos</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<p class="lightup">
+		$$
+			G(s)=(b_2+\frac{b_1}{s}+\frac{b_0}{s^2})\Bigl(\frac{1}{1+\frac{a_1}{s}+\frac{a_0}{s^2}}\Bigr)
+		$$
+	</p>
+		<ul>
+			<li>Diagrama de blocos usando integradores?</li>
+		</ul>
+		</center>
+				</div>
+
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de Funções de Transferência via blocos</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<p class="lightup">
+		$$
+			G(s)=\underbrace{(b_2+\frac{b_1}{s}+\frac{b_0}{s^2})}_{G_1(s)}\underbrace{\Bigl(\frac{1}{1+\frac{a_1}{s}+\frac{a_0}{s^2}}\Bigr)}_{G_2(s)}
+		$$
+	</p>
+		<ul>
+			<li>Diagrama de blocos usando integradores?</li>
+		</ul>
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de Funções de Transferência via blocos</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<p class="lightup">
+		$$
+			W(s)=(b_2+\frac{b_1}{s}+\frac{b_0}{s^2})X(s)
+		$$
+	</p>
+	e
 	<p class="lightup">
-  Módulo $|G(j\omega)|$ = ganho do sistema na frequência $\omega$!
-	</p>
-	<img src="../../images/resposta_frequencia_cosseno2.png" width="550">
-		</center>
-
-
-		</div>
-
-		
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Escala Decibéis</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			|G(j\omega)|_\text{dB}=20\log_{10}|G(j\omega)|
-			$$
-		</p>
-
-	Propriedades de logaritmos:
-	$$
-		\log_b(a)=x \Rightarrow b^x=a\\
-		\log_b(a_1a_2)=\log_b(a_1)+\log_b(a_2)\\
-		\log_b(\frac{1}{a})=\log_b(a^{-1})=-\log_b(a)
-	$$
-		
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Escala Absoluta</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			|G(j\omega)|=10^{\frac{1}{20}|G(j\omega)|_\text{dB}}
-			$$
-		</p>
-
-	Propriedades de logaritmos:
-	$$
-		\log_b(a)=x \Rightarrow b^x=a\\
-		\log_b(a_1a_2)=\log_b(a_1)+\log_b(a_2)\\
-		\log_b(\frac{1}{a})=\log_b(a^{-1})=-\log_b(a)
-	$$
-		
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega)=\frac{Y(j\omega)}{X(
-				j\omega)}=K
-			$$
-		</p>
-
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_estatico.png" width="900">
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_estatico2.png" width="900">
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Dinâmica de 1° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(s)=\frac{Y(s)}{X(s)}=\frac{1}{s+a}
-			$$
-		</p>
-		
-		<img src="../../images/circuito_RC.png" width="450"><br>Circuito RC
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega)=\frac{Y(j\omega)}{X(j\omega)}=\frac{1}{j\omega+a}
-			$$
-		</p>
-		
-		<img src="../../images/circuito_RC.png" width="450"><br>Circuito RC
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega)=\frac{Y(j\omega)}{X(j\omega)}=\frac{\frac{1}{a}}{j\frac{\omega}{a}+1}
-			$$
-		</p>
-		
-		<img src="../../images/circuito_RC.png" width="450"><br>Circuito RC
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega)=\frac{Y(j\omega)}{X(j\omega)}=\frac{1}{j\frac{\omega}{a}+1}
-			$$
-		</p>
-		
-	<ul>
-		<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-		<li>Qual a fase do sistema em função de $\omega$?</li>
-	</ul>
-		
-		</center>
-				</div>
-
-	</section>
-
-
-<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			|G(j\omega)|_{dB}=-20\log_{10}|j\frac{\omega}{a}+1|
-			$$
-		</p>
-		
-	<ul>
-		<li>1° caso: $\omega < < a$ </li>
-		<li>2° caso: $\omega > > a$ </li>
-		<li>3° caso: $\omega=a$</li>
-	</ul>
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	
-<section>
-
-	<div class="slide-title">
-		<h2>Resposta em frequência</h2>
-	</div>
-	<div class="slide-content">
-	<center>
-	<img src="../../images/resposta_frequencia_1ordem_regioes.png" width="900">
-	
-	</center>
-			</div>
-
-</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				1° caso: $\omega < < a$ 
-			$$
-			|G(j\omega)|_{dB}\approxeq-20\log_{10}|1|=0dB
-			$$
-		</p>
-		O sistema tem ganho <b>aproximadamente unitário</b> em baixas frequências!
-		<p class="lightup">
-			1° caso: $\omega < < a$ 
 		$$
-		\angle G(j\omega)\approxeq \angle 1=0°
+			W(s)=(1+\frac{a_1}{s}+\frac{a_0}{s^2})Y(s)
 		$$
 	</p>
-		
 		</center>
 				</div>
 
 	</section>
 
 
-
-		
-<section>
-
-	<div class="slide-title">
-		<h2>Resposta em frequência</h2>
-	</div>
-	<div class="slide-content">
-	<center>
-	<img src="../../images/resposta_frequencia_1ordem.png" width="900">
-	
-	</center>
-			</div>
-
-</section>
-
-
-
 	<section>
 
 		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
+			<h2>Representação de Funções de Transferência via blocos</h2>
 		</div>
 		<div class="slide-content">
 		<center>
-			
 			<p class="lightup">
-				2° caso: $\omega > > a$ 
-			$$
-			|G(j\omega)|_{dB}\approxeq-20\log_{10}\Bigl|\frac{\omega}{a}\Bigl|
-			$$
-		</p>
-<p class="lightup">
-	2° caso: $\omega > > a$ 
-$$
-\angle G(j\omega)\approxeq\angle -j\frac{a}{\omega}=-90°
-$$
-</p>
-		
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-		<img src="../../images/resposta_frequencia_1ordem2.png" width="900">
-		
-		</center>
-				</div>
-	
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				3° caso: $\omega=a$ 
-			$$
-			|G(j\omega)|_{dB}=-20\log_{10}\sqrt{2}\approxeq -3dB
-			$$
-		</p>
-<p class="lightup">
-	3° caso: $\omega > > a$ 
-$$
-\angle G(j\omega)=\angle \frac{1}{1+j}=-45°
-$$
-</p>
-		
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-		<img src="../../images/resposta_frequencia_1ordem3.png" width="900">
-		
-		</center>
-				</div>
-	
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Resposta em frequência</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-		<img src="../../images/resposta_frequencia_1ordem4.png" width="900">
-		
-		</center>
-				</div>
-	
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ 2 pólos reais</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(s)=\frac{Y(s)}{X(s)}=\frac{1}{(s+a_1)(s+a_2)}
-			$$
-			com $a_1< a_2$.
-		</p>
-		
-	
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ 2 pólos reais</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega )=\frac{1}{(j\omega+a_1)(j\omega+a_2)}
-			$$
-		</p>
-		
-	
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ 2 pólos reais</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega )=\frac{\frac{1}{a_1a_2}}{(j\frac{\omega}{a_1}+1)(j\frac{\omega}{a_2}+1)}
-			$$
-		</p>
-		
-	
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ 2 pólos reais</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega )=\frac{1}{(j\frac{\omega}{a_1}+1)(j\frac{\omega}{a_2}+1)}
-			$$
-		</p>
-		
-	
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		</center>
-				</div>
-
-	</section>
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ 2 pólos reais</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-	<img src="../../images/resposta_frequencia_2polos_reais.png" width="900">
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ 2 pólos reais</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-	<img src="../../images/resposta_frequencia_2polos_reais2.png" width="900">
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ 2 pólos reais</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-	<img src="../../images/resposta_frequencia_2polos_reais3.png" width="900">
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ 2 pólos reais</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-	<img src="../../images/resposta_frequencia_2polos_reais4.png" width="900">
-		</center>
-				</div>
-
-	</section>
-
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zero real</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(s)=\frac{Y(s)}{X(s)}=s+b=\frac{1}{(s+b)^{-1}}
-			$$
-		</p>
-		
-	
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		</center>
-				</div>
-
-	</section>
-
-
-
-
-		
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zero real</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_zero_real.png" width="900">
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zero real</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_zero_real2.png" width="900">
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ pólo na origem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(s)=\frac{Y(s)}{X(s)}=\frac{1}{s}
-			$$
-		</p>
-		
-	
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		</center>
-				</div>
-
-	</section>
-
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ pólo na origem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega)=\frac{1}{j\omega}
-			$$
-		</p>
 		$$
-		|G(j\omega)|_{dB}=-20\log_{10}|\omega|\\
-		\angle G(j\omega)=-90°
-		$$
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ pólo na origem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_polo_origem.png" width="900">
-		</center>
-				</div>
-
-	</section>
-
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zero na origem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(j\omega)=j\omega
-			$$
-		</p>
-		$$
-		|G(j\omega)|_{dB}=+20\log_{10}|\omega|\\
-		\angle G(j\omega)=+90°
-		$$
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zero na origem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_zero_origem.png" width="900">
-		</center>
-				</div>
-
-	</section>
-
-
-
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Dinâmica de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-			$$
-			G(s)=\frac{Y(s)}{X(s)}=\frac{1}{(s+p)(s+p^*)}
-			$$
-		</p>
-		
-		<img src="../../images/mass_spring.png" width="450"><br>Massa-Mola
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				Forma padrão:
-			$$
-			G(s)=\frac{Y(s)}{X(s)}=\frac{\omega_n^2}{s^2+2\zeta\omega_n s +\omega_n^2}
-			$$
-		</p>
-		Seja $p=a+jb$, então
-		$$
-		\omega_n=\sqrt{a^2+b^2}\to \text{frequência natural}\\
-		\zeta=\frac{a}{\sqrt{a^2+b^2}} \to \text{coef. de amortecimento}
-		$$
-		
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				$$
-			G(s)=\frac{Y(s)}{X(s)}=\frac{1}{(\frac{s}{\omega_n})^2+2\zeta(\frac{s}{\omega_n}) +1}
-			$$
-		</p>
-		Seja $p=a+jb$, então
-		$$
-		\omega_n=\sqrt{a^2+b^2}\\
-		\zeta=\frac{a}{\sqrt{a^2+b^2}},\quad 0\le \zeta \le 1
-		$$
-		
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/subamortecido_step.png" width="900">
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			Efeito da variação do $\omega_n$:<br>
-		<img src="../../images/subamortecido_step_wn.png" width="850">
-		
-		
-		
-		</center>
-				</div>
-
-	</section>
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				$$
-			G(j\omega)=\frac{1}{(\frac{j\omega}{\omega_n})^2+2\zeta(\frac{j\omega}{\omega_n}) +1}
-			$$
-		</p>
-		
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				$$
-			|G(j\omega)|_{dB}=-20\log_{10}\Bigl|(\frac{j\omega}{\omega_n})^2+2\zeta(\frac{j\omega}{\omega_n}) +1\Bigr|
-			$$
-		</p>
-		
-		<ul>
-			<li>1° caso: $\omega < < \omega_n$ </li>
-			<li>2° caso: $\omega > > \omega_n$ </li>
-			<li>3° caso: $\omega=\omega_n$</li>
-		</ul>
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				1° caso: $\omega < < \omega_n$
-				$$
-			|G(j\omega)|_{dB}\approxeq-20\log_{10}|1|=0dB
-			$$
-		</p>
-
-
-		<p class="lightup">
-			1° caso: $\omega < < \omega_n$
-			$$
-		\angle G(j\omega)\approxeq\angle 1=0°
+			W(s)=(b_2+\frac{b_1}{s}+\frac{b_0}{s^2})X(s)
 		$$
 	</p>
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_2ordem.png" width="900">
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-	
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				2° caso: $\omega > > \omega_n$
-				$$
-			|G(j\omega)|_{dB}\approxeq-40\log_{10}\Bigl|\frac{\omega}{\omega_n}\Bigr|
-			$$
-		</p>
-
-
-		<p class="lightup">
-			2° caso: $\omega > >\omega_n$
-			$$
-		\angle G(j\omega)\approxeq -180°
+	e
+	<p class="lightup">
+		$$
+			Y(s)=W(s)-(\frac{a_1}{s}+\frac{a_0}{s^2})Y(s)
 		$$
 	</p>
-	
-		
-
 		</center>
 				</div>
 
@@ -1231,221 +323,18 @@ $$
 	<section>
 
 		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
+			<h2>Exemplo</h2>
 		</div>
 		<div class="slide-content">
 		<center>
-			
-		<img src="../../images/resposta_frequencia_2ordem2.png" width="900">
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
 			<p class="lightup">
-				3° caso: $\omega = \omega_n$
-				$$
-			|G(j\omega)|_{dB}=-20\log_{10}|2\zeta|
-			$$
-		</p>
-
-
-		<p class="lightup">
-			3° caso: $\omega = \omega_n$
-			$$
-		\angle G(j\omega)=-90°
+		$$
+			G(s)=\frac{s+1}{s+2}
 		$$
 	</p>
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_2ordem3.png" width="900">
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_2ordem4.png" width="900">
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema de 2° Ordem</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_2ordem_matlab.png" width="1000">
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zeros conjugados</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				$$
-			G(j\omega)=\frac{1}{((\frac{j\omega}{\omega_n})^2+2\zeta(\frac{j\omega}{\omega_n}) +1)^{-1}}
-			$$
-		</p>
-		
 		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
+			<li>Diagrama de blocos usando integradores?</li>
 		</ul>
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zeros conjugados</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-			<p class="lightup">
-				$$
-			|G(j\omega)|_{dB}=+20\log_{10}\Bigl|(\frac{j\omega}{\omega_n})^2+2\zeta(\frac{j\omega}{\omega_n}) +1\Bigr|
-			$$
-		</p>
-		
-		<ul>
-			<li>1° caso: $\omega < < \omega_n$ </li>
-			<li>2° caso: $\omega > > \omega_n$ </li>
-			<li>3° caso: $\omega=\omega_n$</li>
-		</ul>
-		
-		</center>
-				</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zeros conjugados</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_zeros_conjugados.png" width="900">
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Sistema c/ zeros conjugados</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			
-		<img src="../../images/resposta_frequencia_zeros_conjugados2.png" width="900">
-	
-		
-
-		</center>
-				</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo:</h2>
-		</div>
-		<div class="slide-content">
-		<center>
-			<img src="../../images/sistema.png" width="500">
-			<p class="lightup">
-	
-			$$
-			G(s)=5\frac{s+1}{s+2}\frac{1}{s^2+2s+4}
-			$$
-		</p>
-
-		<ul>
-			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
-			<li>Qual a fase do sistema em função de $\omega$?</li>
-		</ul>
-		
 		</center>
 				</div>
 
@@ -1456,15 +345,17 @@ $$
 				<section>
 
 					<div class="slide-title">
-						<h2>Próxima aula</h2>
+				
 					</div>
 					<div class="slide-content">
 						<center>
 							<p>&nbsp;</p>
 							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
 			
 							<h3>
-								Diagrama de Blocos para SLIT
+								Representação em espaço de estados
 							</h3>
 								
 				</center>
@@ -1472,6 +363,908 @@ $$
 
 				</section>
 
+
+
+
+
+				
+	<section>
+
+		<div class="slide-title">
+			<h2>Função de Transferência</h2>
+		</div>
+		
+		<div class=""> 
+					SISO (Single-Input-Single-Output):
+			
+			<br>
+			<img src="../../images/sistema.png" width="650">
+			<br>
+			Sistema Escalar (Unidimensional)
+						$$
+			x(t)\in\mathbb{R},\quad y(t) \in \mathbb{R}
+			$$
+			<center>
+				$\Rightarrow $<b>Descrição externa</b> entre entrada e saída.
+			</center>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Modelo em Espaço de Estados</h2>
+		</div>
+		
+		<div class=""> 
+		
+		MIMO (Multiple-Input-Multiple-Output):
+			
+			<br>
+			<img src="../../images/MIMO.png" width="450">
+			<br>
+			Sistema Multivariável (Multidimensional)
+
+			$$
+			u(t)\in\mathbb{R^m},\quad y(t) \in \mathbb{R^p}
+			$$
+			<center>
+				$\Rightarrow $<b>Descrição interna</b> entre entrada e saída.
+			</center>
+		</div>
+
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo de Sistema Multivariável</h2>
+		</div>
+		
+		<div class=""> 
+		
+		Quadricóptero:
+			
+			<br>
+			<img src="../../images/quadcopter.jpg" width="600">
+			<br>
+			Sistema Multivariável (Multidimensional)
+
+			$$
+			u(t)\in\mathbb{R^m},\quad y(t) \in \mathbb{R^p}
+			$$
+		</div>
+
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+				EDO Lineares:
+		$$
+			\frac{d^n y}{dt^n}+\cdots+a_{n-1}\frac{dy}{dt}+a_ny=\frac{d^m x}{dt^m}+\cdots+b_{m-1}\frac{dx}{dt}+b_mx
+		$$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+			$$
+			u\to \text{sinal de entrada}
+			$$
+					<p class="lightup">
+				EDO Lineares (sem derivadas na entrada):
+		$$
+			\frac{d^n y}{dt^n}+a_1\frac{d^{n-1} y}{dt^{n-1}}+\cdots+a_{n-1}\frac{dy}{dt}+a_ny=u
+		$$
+	</p>
+	Caso mais simples!
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Variáveis de estados</h2>
+		</div>
+		$$
+			x\to\text{variável de estado}
+		$$
+		<div class=""> 
+					<p class="lightup">
+		$$
+						x_1=y,\quad x_2=\frac{dy}{dt},\quad x_3=\frac{d^2y}{dt^2},\quad \ldots\quad , x_{n}=\frac{d^{n-1} y}{dt^{n-1}}
+		$$
+	</p>
+	Note que:
+	$$
+		x_2=\dot{x}_1,\quad x_3=\dot{x}_2,\quad \ldots\quad ,x_n=\dot{x}_{n-1}
+	$$
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Variáveis de estados</h2>
+		</div>
+		$$
+			x\to\text{variável de estado}
+		$$
+		<div class=""> 
+					<p class="lightup">
+		$$
+						x_1=y,\quad x_2=\frac{dy}{dt},\quad x_3=\frac{d^2y}{dt^2},\quad \ldots\quad , x_{n}=\frac{d^{n-1} y}{dt^{n-1}}
+		$$
+	</p>
+	Variáveis de estado são o menor conjunto de variáveis que, quando conhecidas no instante $t=t_0$ juntamente com o sinal de entrada $u(t)$, determinam completamente o comportamento do sistema para $t\ge t_0$.
+		</div>
+
+		
+	</section>
+
+
+
+		
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+				EDO Lineares:
+		$$
+			\dot{x}_n+a_1x_{n}+\cdots+a_{n-1}x_2+a_nx_1=u
+		$$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+				Conjunto de EDO Lineares de 1° ordem:
+		$$
+		\dot{x}_1=x_2 \\
+		\dot{x}_2=x_3\\
+		\vdots\\
+			\dot{x}_n+a_1x_{n}+\cdots+a_{n-1}x_2+a_nx_1=u
+		$$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+				EDO Matricial de 1° ordem:
+		$$
+		\begin{bmatrix}
+		\dot{x}_1 \\
+		\dot{x}_2 \\
+		\vdots \\
+		\dot{x}_n
+		\end{bmatrix}=\begin{bmatrix}
+		0 & 1 & 0 & \cdots & 0  \\
+		0 & 0 & 1 & \cdots & 0 \\
+		\vdots & \vdots & \vdots & \ddots & \vdots  \\ 
+		-a_n & -a_{n-1} & -a_{n-2} & \cdots & -a_1 
+		\end{bmatrix}\begin{bmatrix}
+		x_1 \\
+		x_2 \\
+		\vdots \\
+		x_n
+		\end{bmatrix}+\begin{bmatrix}
+		0 \\
+		0 \\
+		\vdots \\
+		1
+		\end{bmatrix}u
+		$$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+				EDO Matricial de 1° ordem (única entrada):
+		$$
+		\dot{x}=Ax+Bu
+		$$
+		com $x\in\mathbb{R}^n$, $A\in\mathbb{R}^{n\times n}$, $B\in\mathbb{R}^{n\times 1}$, $u\in\mathbb{R}$
+	</p>
+	<center>
+		$$
+		A \to \text{matriz de dinâmica} \\
+		B \to \text{matriz de entrada}
+		$$
+	</center>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+				EDO Matricial de 1° ordem (múltiplas entradas):
+		$$
+		\dot{x}=Ax+Bu
+		$$
+		com $x\in\mathbb{R}^n$, $A\in\mathbb{R}^{n\times n}$, $B\in\mathbb{R}^{n\times m}$, $u\in\mathbb{R}^m$
+	</p>
+		</div>
+		<center>
+			$$
+			A \to \text{matriz de dinâmica} \\
+			B \to \text{matriz de entrada}
+			$$
+		</center>
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+				Saída do sistema (única saída):
+		$$
+		y=Cx
+		$$
+		com $x\in\mathbb{R}^n$, $C\in\mathbb{R}^{1\times n}$, $y\in\mathbb{R}$
+	</p>
+		</div>
+		<center>
+			$$
+			C \to \text{matriz de saída} \\
+			y \to \text{sinal de saída}
+			$$
+		</center>
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistemas Lineares Invariantes no Tempo (SLIT)</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+				Saída do sistema (múltiplas saídas):
+		$$
+		y=Cx
+		$$
+		com $x\in\mathbb{R}^n$, $C\in\mathbb{R}^{p\times n}$, $y\in\mathbb{R}^p$
+	</p>
+		</div>
+		<center>
+			$$
+			C \to \text{matriz de saída} \\
+			y \to \text{sinal de saída}
+			$$
+		</center>
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Modelo em Espaço de Estados</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+
+		$$
+		\begin{aligned}
+		\dot{x}&=Ax+Bu\\
+		y&=Cx
+		\end{aligned}
+		$$
+		
+	</p>
+	<center>
+		$$
+		A \to \text{matriz de dinâmica} \\
+		B \to \text{matriz de entrada}\\
+		C \to \text{matriz de saída}
+		$$
+	</center>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Circuito RLC</h2>
+		</div>
+		
+		<div class=""> 
+			<center><img src="../../images/circuito_RLC.png" width="500"></center>
+					<p class="lightup2">
+		$$
+		\ddot{V}_0+\frac{R}{L}\dot{V}_o+\frac{1}{LC}V_0=\frac{1}{LC}V_i
+		$$
+		
+	</p>
+		</div>
+		<center>
+			Qual o modelo em espaço de estados?
+		</center>
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Solução da Equação de Estados (SLIT)</h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+					<p class="lightup">
+				EDO Matricial de 1° ordem (única entrada):
+		$$
+		\dot{x}=Ax+Bu
+		$$
+		com $x\in\mathbb{R}^n$, $A\in\mathbb{R}^{n\times n}$, $B\in\mathbb{R}^{n\times 1}$, $u\in\mathbb{R}$
+	</p>
+	<center>
+	Qual a solução dessa EDO matricial?
+	</center>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Solução da Equação de Estados (SLIT)</h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+					<p class="lightup">
+				EDO Matricial de 1° ordem ($u=0$):
+		$$
+		\dot{x}=Ax
+		$$
+		com $x\in\mathbb{R}^n$, $A\in\mathbb{R}^{n\times n}$.
+	</p>
+	<center>
+	Qual a solução dessa EDO matricial?
+	</center>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Solução da Equação de Estados (SLIT)</h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+					<p class="lightup">
+				EDO Matricial de 1° ordem ($u=0$):
+		$$
+		x(t)=e^{At}x(0),\quad t\ge 0
+		$$
+		com $x\in\mathbb{R}^n$, $A\in\mathbb{R}^{n\times n}$.
+	</p>
+
+	$$
+	e^{At}=I+At+\frac{1}{2}A^2t^2+\ldots
+	$$
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Solução da Equação de Estados (SLIT)</h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+					<p class="lightup">
+				EDO Matricial de 1° ordem (única entrada):
+		$$
+		\dot{x}=Ax+Bu
+		$$
+		com $x\in\mathbb{R}^n$, $A\in\mathbb{R}^{n\times n}$, $B\in\mathbb{R}^{n\times 1}$, $u\in\mathbb{R}$
+	</p>
+	<center>
+	Qual a solução dessa EDO matricial?
+	</center>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Solução da Equação de Estados (SLIT)</h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+					<p class="lightup">
+				EDO Matricial de 1° ordem (única entrada):
+		$$
+		x(t)=e^{At}x(0)+\int_0^t e^{A(t-\tau)}Bu(\tau)d\tau
+		$$
+		com $x\in\mathbb{R}^n$, $A\in\mathbb{R}^{n\times n}$, $B\in\mathbb{R}^{n\times 1}$, $u\in\mathbb{R}$
+	</p>
+
+		</div>
+
+		
+	</section>
+
+
+
+		
+	<section>
+
+		<div class="slide-title">
+			<h2>Estabilidade (Função de Transferência)</h2>
+		</div>
+		<div class="slide-content">
+			<center>
+			<img src="../../images/estabilidade_continuo.png" width="350">					
+			<p class="lightup">
+				$\mathcal{Real}\{\text{pólos}\} < 0$
+			</p>
+	</center>
+		   </div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Estabilidade (Espaço de Estados)</h2>
+		</div>
+		<div class="slide-content">
+			<center>
+			$$
+			\begin{aligned}
+			\dot{x}=Ax+Bu
+			\end{aligned}
+			$$
+			Seja $\lambda\{A\}=\{\lambda_1,\lambda_2,\ldots,\lambda_n\}$ os autovalores da matriz dinâmica.
+
+		
+			<p class="lightup">
+				O sistema é estável se 
+				$$\mathcal{Real}\{\lambda\{A\}\} < 0$$
+			</p>
+			obs: quando não existe cancelamento de zeros com pólos, os autovalores de $A$ coincidem com os pólos da função de transferência!
+	</center>
+		   </div>
+
+	</section>
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Transformada de Laplace </h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+			Considerando o sistema inicialmente em repouso (C.I.N.), tem-se
+					<p class="lightup">
+		$$
+		\begin{aligned}
+		sX(s)&=AX(s)+BU(s)\\
+		Y(s)&=CX(s)
+		\end{aligned}
+		$$
+		
+	</p>
+
+		</div>
+
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Transformada de Laplace </h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+			Considerando o sistema inicialmente em repouso (C.I.N.), tem-se
+					<p class="lightup">
+		$$
+		\begin{aligned}
+		X(s)&=(sI-A)^{-1}BU(s)\\
+		Y(s)&=C(sI-A)^{-1}BU(s)
+		\end{aligned}
+		$$
+		
+	</p>
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Transformada de Laplace </h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+			Considerando o sistema inicialmente em repouso (C.I.N.), tem-se
+					<p class="lightup">
+						Função de Transferência
+		$$
+		\begin{aligned}
+		\frac{Y(s)}{U(s)}=C(sI-A)^{-1}B=G(s)\\
+		\end{aligned}
+		$$
+		
+	</p>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Inversa de Matriz nxn </h2>
+		</div>
+		<div class=""> 
+			Por definição, 
+			$$
+			AA^{-1}=I
+			$$
+	<p class="lightup2">
+		$$
+		\begin{aligned}
+A^{-1}=\frac{1}{\det(A)}adj(A)
+		\end{aligned}
+		$$
+		
+	</p>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Inversa de Matriz 2x2</h2>
+		</div>
+		<div class=""> 
+			Seja
+					<p class="lightup2">
+		$$
+		\begin{aligned}
+A=\begin{bmatrix}
+a_1 & a_2 \\
+a_3 & a_4
+\end{bmatrix}
+		\end{aligned}
+		$$
+		
+	</p>
+	então,
+	<p class="lightup2">
+		$$
+		\begin{aligned}
+A^{-1}=\frac{1}{a_1a_4-a_2a_3}\begin{bmatrix}
+a_4 & -a_2 \\
+-a_3 & a_1
+\end{bmatrix}
+		\end{aligned}
+		$$
+		
+	</p>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo </h2>
+		</div>
+		<div class=""> 
+			Considerando o sistema inicialmente em repouso (C.I.N.):
+					<p class="lightup">
+					
+		$$
+		\begin{aligned}
+		\dot{x}&=\begin{bmatrix}1 & 1 \\ 0 & 1\end{bmatrix}x+\begin{bmatrix}0\\ 1\end{bmatrix}u\\
+		y&=\begin{bmatrix}1 & 0\end{bmatrix}x
+		\end{aligned}
+		$$
+		
+	</p>
+<center>
+Qual a função de transferência desse sistema?
+</center>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Modelo em Espaço de Estados</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+Sistemas Lineares e Variantes no Tempo (SLVT)
+		$$
+		\begin{aligned}
+		\dot{x}&=A(t)x+B(t)u\\
+		y&=C(t)x
+		\end{aligned}
+		$$
+		
+	</p>
+	<center>
+		$$
+		A(t) \to \text{matriz de dinâmica} \\
+		B(t) \to \text{matriz de entrada}\\
+		C(t) \to \text{matriz de saída}
+		$$
+	</center>
+		</div>
+
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Circuito RLC</h2>
+		</div>
+		
+		<div class=""> 
+			<center><img src="../../images/circuito_RLC.png" width="500"></center>
+					<p class="lightup2">
+		$$
+		\ddot{V}_0+\frac{R(t)}{L(t)}\dot{V}_o+\frac{1}{L(t)C(t)}V_0=\frac{1}{L(t)C(t)}V_i
+		$$
+		
+	</p>
+		</div>
+		<center>
+			Qual o modelo em espaço de estados?
+		</center>
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Circuito RLC</h2>
+		</div>
+		
+		<div class=""> 
+			<center><img src="../../images/circuito_RLC.png" width="500"></center>
+					<p class="lightup2">
+		$$
+		\dot{x}=\begin{bmatrix}
+		0 & 1 \\
+		-\frac{1}{L(t)C(t)} & - \frac{R(t)}{L(t)}
+		\end{bmatrix}x+\begin{bmatrix}
+		0\\
+		\frac{1}{L(t)C(t)}
+		\end{bmatrix}u
+		$$
+		
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Circuito RLC</h2>
+		</div>
+		
+		<div class=""> 
+			<center><img src="../../images/circuito_RLC.png" width="500"></center>
+					<p class="lightup2">
+		$$
+		\dot{x}=\underbrace{\begin{bmatrix}
+		0 & 1 \\
+		-\frac{1}{L(t)C(t)} & - \frac{R(t)}{L(t)}
+		\end{bmatrix}}_{A(t)}x+\underbrace{\begin{bmatrix}
+		0\\
+		\frac{1}{L(t)C(t)}
+		\end{bmatrix}}_{B(t)}u
+		$$
+		
+	</p>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Modelo em Espaço de Estados</h2>
+		</div>
+		
+		<div class=""> 
+					<p class="lightup">
+Sistemas Não-Lineares:
+		$$
+		\begin{aligned}
+		\dot{x}&=f(x,u)\\
+		y&=h(x)
+		\end{aligned}
+		$$
+		
+	</p>
+	<center>
+		$$
+		f \to \text{função de dinâmica} \\
+		h \to \text{função de saída}\\
+		$$
+	</center>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo: Pêndulo Simples</h2>
+		</div>
+		
+		<div class=""> 
+			<img src="../../images/pendulo_simples.gif" width="800">
+					<p class="lightup2">
+
+	
+
+	$$
+	l\ddot{\theta}=-g\sin(\theta)-b\dot{\theta}+u
+	$$
+
+
+		
+	</p>
+	<center>
+		Qual o modelo em espaço de estados?
+	</center>
+		</div>
+
+		
+	</section>
+
+
+
+
+
+
+
+	
 
 
 
@@ -1484,7 +1277,7 @@ $$
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
 					<h2>
-						Até a próxima aula!
+						FIM!
 					</h2>
 				</center>
 								
@@ -1492,7 +1285,6 @@ $$
 					   </div>
 
 				</section>
-
 
 
 

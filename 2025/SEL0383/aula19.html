@@ -18,52 +18,7 @@
 		type="text/javascript"
 		src="../../reveal.js/dist/vis-graph3d.min.js"
 	  ></script>
-	  <!-- <script type="text/javascript">
-		var data = null;
-		var graph = null;
-  
-	
-		// Called when the Visualization API is loaded.
-		function drawVisualization() {
-		  // Create and populate a data table.
-		  data = new vis.DataSet();
-		  // create some nice looking data with sin/cos
-		  var counter = 0;
-		  var steps = 1000; // number of datapoints will be steps*steps
-		  var axisMax = 20;
-		  var axisStep = axisMax / steps;
-		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
-			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
-		  }
-  
-		  // specify options
-		  var options = {
-			width: "600px",
-			height: "600px",
-			style: "line",
-			dataColor: '#ff0000',
-			showPerspective: false,
-			showGrid: true,
-			showShadow: false,
-			keepAspectRatio: false,
-			verticalRatio: 1,
-			xLabel: "t",
-			zLabel: "Imaginário",
-			yLabel: "Real",
-			showAnimationControls 	: true
-		  };
-  
-		  // Instantiate our graph object.
-		  var container = document.getElementById("mygraph");
-		  graph = new vis.Graph3d(container, data, options);
-		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
-
-
-		  var container = document.getElementById("mygraph2");
-		  graph = new vis.Graph3d(container, data, options);
-		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
-		}
-	  </script> -->
+	  
 	</head>
 	<!-- <body onload="drawVisualization();"> -->
 		<body>
@@ -75,16 +30,16 @@
 				
 				<section data-hide-slide-number="true" data-transition="slide">
 					<div class="logo"><img src="../../images/sel.png"/> </div>
-					<div class="logo2"><img src="../../images/usp.png"/> </div>
+					<div class="logo2"><img src="../../images/Logo EESC-USP_top.png"/> </div>
 					<div class="title">
-					<h2>Aula 20: <br>Resposta em Frequência de SLIT<br>SEL0383</h2>
+					<h2>Aula 19: <br>Resposta em Frequência de SLIT<br>SEL0383</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
 				</div>
 					<div class="advisor">
 					
-					<p style="text-align: center;font-size: 0.8em;">12 de novembro de 2024</p>
+					<p style="text-align: center;font-size: 0.8em;">24 de novembro de 2025</p>
 				</div>
 
 				</section>
@@ -105,6 +60,9 @@
 					<ul>
 					<li>Auto-função e Autovalor de SLIT;</li>
 					<li>Respostas em frequência de SLIT;</li>
+					<li>Componentes da função de transferência;</li>
+					<li>Dinâmica de 1° e 2° ordem;</li>
+					<li>Diagrama de Bode aproximado;</li>
 					<li>Exemplos</li>
 				</p>
 				</div>
@@ -129,10 +87,7 @@
 			M\ddot{y}=-Ky-\gamma\dot{y}+F(t)
 	$
 </p>
-	<ul>
-		<li>Qual a função de transferência?</li>
-		<li>Qual a resposta ao impulso?</li>
-	</ul>
+
 		</center>
 
 
@@ -887,6 +842,1405 @@ SLIT conservam a frequência! Uma frequência $\omega_0$ que não estiver na ent
 
 
 
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Diagrama de Bode</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+				Forma geral:
+			$$
+			G(s)=\frac{Y(s)}{X(s)}=\frac{s^m+\cdots+b_{m-1}s+ b_m}{s^n+\cdots+a_{n-1}s+a_n}
+			$$
+		</p>
+		</center>
+				</div>
+
+	</section>
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Diagrama de Bode</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+				Forma ZPK:
+			$$
+			G(s)=K\frac{s+b}{s+a}\frac{(s+z)(s+z^*)}{(s+p)(s+p^*)}
+			$$
+		</p>
+		FT=(ganho)+(zeros/polos reais) + (zeros/polos conjugados)
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema estático</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(s)=\frac{Y(s)}{X(s)}=K
+			$$
+		</p>
+
+		
+		<img src="../../images/circuito_R.png" width="450"><br>Resistor ideal
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega)=\frac{Y(j\omega)}{X(
+				j\omega)}=K
+			$$
+		</p>
+
+		<ul>
+			<li>Módulo?</li>
+			<li>Fase?</li>
+		</ul>
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+
+			<img src="../../images/sistema_cos2.png" width="950">
+
+	<p class="lightup">
+  Módulo $|G(j\omega)|$ = ganho do sistema na frequência $\omega$!
+	</p>
+	<img src="../../images/resposta_frequencia_cosseno2.png" width="550">
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Escala Decibéis</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			|G(j\omega)|_\text{dB}=20\log_{10}|G(j\omega)|
+			$$
+		</p>
+
+	Propriedades de logaritmos:
+	$$
+		\log_b(a)=x \Rightarrow b^x=a\\
+		\log_b(a_1a_2)=\log_b(a_1)+\log_b(a_2)\\
+		\log_b(\frac{1}{a})=\log_b(a^{-1})=-\log_b(a)
+	$$
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Escala Absoluta</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			|G(j\omega)|=10^{\frac{1}{20}|G(j\omega)|_\text{dB}}
+			$$
+		</p>
+
+	Propriedades de logaritmos:
+	$$
+		\log_b(a)=x \Rightarrow b^x=a\\
+		\log_b(a_1a_2)=\log_b(a_1)+\log_b(a_2)\\
+		\log_b(\frac{1}{a})=\log_b(a^{-1})=-\log_b(a)
+	$$
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega)=\frac{Y(j\omega)}{X(
+				j\omega)}=K
+			$$
+		</p>
+
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_estatico.png" width="900">
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_estatico2.png" width="900">
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Dinâmica de 1° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(s)=\frac{Y(s)}{X(s)}=\frac{a}{s+a}
+			$$
+		</p>
+		
+		<img src="../../images/circuito_RC.png" width="450"><br>Circuito RC
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega)=\frac{Y(j\omega)}{X(j\omega)}=\frac{a}{j\omega+a}
+			$$
+		</p>
+		
+		<img src="../../images/circuito_RC.png" width="450"><br>Circuito RC
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega)=\frac{Y(j\omega)}{X(j\omega)}=\frac{1}{j\frac{\omega}{a}+1}
+			$$
+		</p>
+		
+	<ul>
+		<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+		<li>Qual a fase do sistema em função de $\omega$?</li>
+	</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			|G(j\omega)|_{dB}=-20\log_{10}|j\frac{\omega}{a}+1|
+			$$
+		</p>
+		
+	<ul>
+		<li>1° caso: $\omega < < a$ </li>
+		<li>2° caso: $\omega > > a$ </li>
+		<li>3° caso: $\omega=a$</li>
+	</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	
+<section>
+
+	<div class="slide-title">
+		<h2>Resposta em frequência</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../../images/resposta_frequencia_1ordem_regioes.png" width="900">
+	
+	</center>
+			</div>
+
+</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				1° caso: $\omega < < a$ 
+			$$
+			|G(j\omega)|_{dB}\approxeq-20\log_{10}|1|=0dB
+			$$
+		</p>
+		O sistema tem ganho <b>aproximadamente unitário</b> em baixas frequências!
+		<p class="lightup">
+			1° caso: $\omega < < a$ 
+		$$
+		\angle G(j\omega)\approxeq \angle 1=0°
+		$$
+	</p>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+		
+<section>
+
+	<div class="slide-title">
+		<h2>Resposta em frequência</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../../images/resposta_frequencia_1ordem.png" width="900">
+	
+	</center>
+			</div>
+
+</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				2° caso: $\omega > > a$ 
+			$$
+			|G(j\omega)|_{dB}\approxeq-20\log_{10}\Bigl|\frac{\omega}{a}\Bigl|
+			$$
+		</p>
+<p class="lightup">
+	2° caso: $\omega > > a$ 
+$$
+\angle G(j\omega)\approxeq\angle -j\frac{a}{\omega}=-90°
+$$
+</p>
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+		<img src="../../images/resposta_frequencia_1ordem2.png" width="900">
+		
+		</center>
+				</div>
+	
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				3° caso: $\omega=a$ 
+			$$
+			|G(j\omega)|_{dB}=-20\log_{10}\sqrt{2}\approxeq -3dB
+			$$
+		</p>
+<p class="lightup">
+	3° caso: $\omega > > a$ 
+$$
+\angle G(j\omega)=\angle \frac{1}{1+j}=-45°
+$$
+</p>
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+		<img src="../../images/resposta_frequencia_1ordem3.png" width="900">
+		
+		</center>
+				</div>
+	
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+		<img src="../../images/resposta_frequencia_1ordem4.png" width="900">
+		
+		</center>
+				</div>
+	
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ 2 pólos reais</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(s)=\frac{Y(s)}{X(s)}=\frac{a_1a_2}{(s+a_1)(s+a_2)}
+			$$
+			com $a_1< a_2$.
+		</p>
+		
+	
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ 2 pólos reais</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega )=\frac{a_1a_2}{(j\omega+a_1)(j\omega+a_2)}
+			$$
+		</p>
+		
+	
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ 2 pólos reais</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega )=\frac{1}{(j\frac{\omega}{a_1}+1)(j\frac{\omega}{a_2}+1)}
+			$$
+		</p>
+		
+	
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ 2 pólos reais</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega )=\frac{1}{(j\frac{\omega}{a_1}+1)(j\frac{\omega}{a_2}+1)}
+			$$
+		</p>
+		
+	
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		</center>
+				</div>
+
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ 2 pólos reais</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+	<img src="../../images/resposta_frequencia_2polos_reais.png" width="900">
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ 2 pólos reais</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+	<img src="../../images/resposta_frequencia_2polos_reais2.png" width="900">
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ 2 pólos reais</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+	<img src="../../images/resposta_frequencia_2polos_reais3.png" width="900">
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ 2 pólos reais</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+	<img src="../../images/resposta_frequencia_2polos_reais4.png" width="900">
+		</center>
+				</div>
+
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zero real</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(s)=\frac{Y(s)}{X(s)}=s+b=\frac{1}{(s+b)^{-1}}
+			$$
+		</p>
+		
+	
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		</center>
+				</div>
+
+	</section>
+
+
+
+
+		
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zero real</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_zero_real.png" width="900">
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zero real</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_zero_real2.png" width="900">
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ pólo na origem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(s)=\frac{Y(s)}{X(s)}=\frac{1}{s}
+			$$
+		</p>
+		
+	
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		</center>
+				</div>
+
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ pólo na origem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega)=\frac{1}{j\omega}
+			$$
+		</p>
+		$$
+		|G(j\omega)|_{dB}=-20\log_{10}|\omega|\\
+		\angle G(j\omega)=-90°
+		$$
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ pólo na origem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_polo_origem.png" width="900">
+		</center>
+				</div>
+
+	</section>
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zero na origem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(j\omega)=j\omega
+			$$
+		</p>
+		$$
+		|G(j\omega)|_{dB}=+20\log_{10}|\omega|\\
+		\angle G(j\omega)=+90°
+		$$
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zero na origem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_zero_origem.png" width="900">
+		</center>
+				</div>
+
+	</section>
+
+
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Dinâmica de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+			$$
+			G(s)=\frac{Y(s)}{X(s)}=\frac{1}{(s+p)(s+p^*)}
+			$$
+		</p>
+		
+		<img src="../../images/mass_spring.png" width="450"><br>Massa-Mola
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				Forma padrão:
+			$$
+			G(s)=\frac{Y(s)}{X(s)}=\frac{\omega_n^2}{s^2+2\zeta\omega_n s +\omega_n^2}
+			$$
+		</p>
+		Seja $p=a+jb$, então
+		$$
+		\omega_n=\sqrt{a^2+b^2}\to \text{frequência natural}\\
+		\zeta=\frac{a}{\sqrt{a^2+b^2}} \to \text{coef. de amortecimento}
+		$$
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/subamortecido_step.png" width="900">
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			Efeito da variação do $\omega_n$:<br>
+		<img src="../../images/subamortecido_step_wn.png" width="850">
+		
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				$$
+			G(s)=\frac{Y(s)}{X(s)}=\frac{1}{(\frac{s}{\omega_n})^2+2\zeta(\frac{s}{\omega_n}) +1}
+			$$
+		</p>
+		Seja $p=a+jb$, então
+		$$
+		\omega_n=\sqrt{a^2+b^2}\\
+		\zeta=\frac{a}{\sqrt{a^2+b^2}},\quad 0\le \zeta \le 1
+		$$
+		
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				$$
+			G(j\omega)=\frac{1}{(\frac{j\omega}{\omega_n})^2+2\zeta(\frac{j\omega}{\omega_n}) +1}
+			$$
+		</p>
+		
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				$$
+			|G(j\omega)|_{dB}=-20\log_{10}\Bigl|(\frac{j\omega}{\omega_n})^2+2\zeta(\frac{j\omega}{\omega_n}) +1\Bigr|
+			$$
+		</p>
+		
+		<ul>
+			<li>1° caso: $\omega < < \omega_n$ </li>
+			<li>2° caso: $\omega > > \omega_n$ </li>
+			<li>3° caso: $\omega=\omega_n$</li>
+		</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				1° caso: $\omega < < \omega_n$
+				$$
+			|G(j\omega)|_{dB}\approxeq-20\log_{10}|1|=0dB
+			$$
+		</p>
+
+
+		<p class="lightup">
+			1° caso: $\omega < < \omega_n$
+			$$
+		\angle G(j\omega)\approxeq\angle 1=0°
+		$$
+	</p>
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_2ordem.png" width="900">
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+	
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				2° caso: $\omega > > \omega_n$
+				$$
+			|G(j\omega)|_{dB}\approxeq-40\log_{10}\Bigl|\frac{\omega}{\omega_n}\Bigr|
+			$$
+		</p>
+
+
+		<p class="lightup">
+			2° caso: $\omega > >\omega_n$
+			$$
+		\angle G(j\omega)\approxeq -180°
+		$$
+	</p>
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_2ordem2.png" width="900">
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				3° caso: $\omega = \omega_n$
+				$$
+			|G(j\omega)|_{dB}=-20\log_{10}|2\zeta|
+			$$
+		</p>
+
+
+		<p class="lightup">
+			3° caso: $\omega = \omega_n$
+			$$
+		\angle G(j\omega)=-90°
+		$$
+	</p>
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_2ordem3.png" width="900">
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_2ordem4.png" width="900">
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema de 2° Ordem</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_2ordem_matlab.png" width="1000">
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zeros conjugados</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				$$
+			G(j\omega)=\frac{1}{((\frac{j\omega}{\omega_n})^2+2\zeta(\frac{j\omega}{\omega_n}) +1)^{-1}}
+			$$
+		</p>
+		
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zeros conjugados</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+			<p class="lightup">
+				$$
+			|G(j\omega)|_{dB}=+20\log_{10}\Bigl|(\frac{j\omega}{\omega_n})^2+2\zeta(\frac{j\omega}{\omega_n}) +1\Bigr|
+			$$
+		</p>
+		
+		<ul>
+			<li>1° caso: $\omega < < \omega_n$ </li>
+			<li>2° caso: $\omega > > \omega_n$ </li>
+			<li>3° caso: $\omega=\omega_n$</li>
+		</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zeros conjugados</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_zeros_conjugados.png" width="900">
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Sistema c/ zeros conjugados</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			
+		<img src="../../images/resposta_frequencia_zeros_conjugados2.png" width="900">
+	
+		
+
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+	
+			$$
+			G(s)=5\frac{s+1}{s+2}\frac{1}{s^2+2s+4}
+			$$
+		</p>
+
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+	
+			$$
+			G(j\omega)=5\frac{j\omega+1}{j\omega+2}\frac{1}{(j\omega)^2+2j\omega+4}
+			$$
+		</p>
+
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+	
+			$$
+			G(j\omega)=\frac{5}{2}\frac{j\omega+1}{j\frac{\omega}{2}+1}\frac{1}{(j\omega)^2+2j\omega+4}
+			$$
+		</p>
+
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+	
+			$$
+			G(j\omega)=\frac{5}{2\cdot 4}\frac{j\omega+1}{j\frac{\omega}{2}+1}\frac{1}{(j\frac{\omega}{2})^2+j\frac{\omega}{2}+1}
+			$$
+		</p>
+
+		<ul>
+			<li>Qual o ganho do sistema em dB em função de $\omega$? </li>
+			<li>Qual a fase do sistema em função de $\omega$?</li>
+		</ul>
+		
+		</center>
+				</div>
+
+	</section>
+
+
 	
 
 
@@ -903,7 +2257,7 @@ SLIT conservam a frequência! Uma frequência $\omega_0$ que não estiver na ent
 							<p>&nbsp;</p>
 			
 							<h3>
-								Diagrama de Bode para SLIT
+								Diagrama de Blocos e Modelagem em Espaço de Estados
 							</h3>
 								
 				</center>
